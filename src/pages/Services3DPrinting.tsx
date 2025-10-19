@@ -72,6 +72,28 @@ export const Services3DPrinting = () => {
               </Card>
             </motion.div>
 
+            <div className="grid md:grid-cols-2 gap-6 mt-8">
+              <Card>
+                <h3 className="text-xl font-bold text-white mb-3">Post-Processing Services</h3>
+                <ul className="space-y-2 text-gray-300 text-sm">
+                  <li>UV Curing & Heat Treatment</li>
+                  <li>Sanding & Surface Finishing</li>
+                  <li>Painting & Coating</li>
+                  <li>Assembly Services</li>
+                  <li>Quality Inspection</li>
+                </ul>
+              </Card>
+              <Card>
+                <h3 className="text-xl font-bold text-white mb-2">SLS – Future Expansion</h3>
+                <p className="text-gray-400 text-sm mb-2">Nylon parts production, strong functional components with no support structures.</p>
+                <ul className="list-disc pl-5 text-gray-300 text-sm space-y-1">
+                  <li>Nylon PA12/PA11 for durable parts</li>
+                  <li>Complex geometries without supports</li>
+                  <li>Roadmap: polymer SLS, metal AM (DMLS)</li>
+                </ul>
+              </Card>
+            </div>
+
             <div className="mt-12 text-center">
               <Button size="lg" onClick={() => window.location.href = '/get-a-quote'}>
                 Upload Files for Quote

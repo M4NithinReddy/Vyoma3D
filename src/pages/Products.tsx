@@ -6,79 +6,14 @@ import { SectionHeader } from '../components/SectionHeader';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { staggerContainer, staggerItem } from '../lib/animations';
+import { products as allProducts } from '../data/products';
+import { useNavigate } from 'react-router-dom';
 
-const products = [
-  {
-    category: 'printers',
-    icon: Printer,
-    name: 'V3 Pro SLA',
-    type: 'SLA Resin Printer',
-    buildVolume: '192 x 120 x 200 mm',
-    resolution: '47 microns',
-    price: 'Request Quote',
-    features: ['High precision', 'Auto-leveling', 'WiFi connectivity', 'Touch screen interface'],
-    image: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=400',
-    description: 'Professional-grade SLA printer delivering unparalleled precision for detailed prototypes and production parts.'
-  },
-  {
-    category: 'printers',
-    icon: Printer,
-    name: 'V3 Industrial FDM',
-    type: 'FDM Printer',
-    buildVolume: '300 x 300 x 400 mm',
-    resolution: '100 microns',
-    price: 'Request Quote',
-    features: ['Dual extruder', 'Heated chamber', 'Industrial grade', 'Filament runout sensor'],
-    image: 'https://images.pexels.com/photos/1089440/pexels-photo-1089440.jpeg?auto=compress&cs=tinysrgb&w=400',
-    description: 'Robust FDM system designed for continuous production with engineering-grade thermoplastics.'
-  },
-  {
-    category: 'materials',
-    icon: Droplets,
-    name: 'Engineering Resin',
-    type: 'SLA Material',
-    properties: 'High strength, heat resistant',
-    applications: 'Functional prototypes',
-    price: '$89/L',
-    features: ['Heat deflection 120°C', 'High impact resistance', 'Low shrinkage', 'Excellent surface finish'],
-    image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400',
-    description: 'High-performance resin engineered for functional testing and end-use applications requiring thermal stability.'
-  },
-  {
-    category: 'materials',
-    icon: Droplets,
-    name: 'Nylon CF',
-    type: 'FDM Filament',
-    properties: 'Carbon fiber reinforced',
-    applications: 'End-use parts',
-    price: '$125/kg',
-    features: ['Superior strength', 'Lightweight', 'Chemical resistant', 'Low moisture absorption'],
-    image: 'https://images.pexels.com/photos/5474041/pexels-photo-5474041.jpeg?auto=compress&cs=tinysrgb&w=400',
-    description: 'Carbon fiber reinforced nylon offering exceptional strength-to-weight ratio for demanding applications.'
-  },
-  {
-    category: 'accessories',
-    icon: Wrench,
-    name: 'Wash & Cure Station',
-    type: 'Post-Processing',
-    features: ['Automated washing', 'UV curing', 'Timer control', 'Dual-stage process'],
-    price: '$299',
-    applications: 'SLA post-processing',
-    image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400',
-    description: 'Complete post-processing solution for SLA prints with automated washing and precision UV curing.'
-  },
-  {
-    category: 'accessories',
-    icon: Wrench,
-    name: 'Build Plate Kit',
-    type: 'Accessory',
-    features: ['Easy removal', 'Multiple sizes', 'PEI coating', 'Magnetic attachment'],
-    price: '$49',
-    applications: 'FDM printing',
-    image: 'https://images.pexels.com/photos/1089433/pexels-photo-1089433.jpeg?auto=compress&cs=tinysrgb&w=400',
-    description: 'Premium build plate system with PEI surface for excellent adhesion and effortless part removal.'
-  }
-];
+const IconMap = { Printer, Droplets, Wrench } as const;
+const products = allProducts.map(p => ({
+  ...p,
+  iconComp: IconMap[p.icon]
+}));
 
 const filterOptions = [
   { id: 'all', label: 'All Products', icon: null },
@@ -88,6 +23,7 @@ const filterOptions = [
 ];
 
 export const Products = () => {
+  const navigate = useNavigate();
   const [filter, setFilter] = useState<string>('all');
   const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
 
@@ -125,9 +61,9 @@ export const Products = () => {
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             <AnimatePresence mode="popLayout">
-              {filtered.map((product, i) => (
+              {filtered.map((product) => (
                 <motion.div
-                  key={product.name}
+                  key={product.slug}
                   variants={staggerItem}
                   layout
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -144,7 +80,7 @@ export const Products = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
                       <div className="absolute top-4 right-4 w-12 h-12 rounded-xl bg-gray-900/80 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                        <product.icon className="text-violet-400" size={24} />
+                        <product.iconComp className="text-violet-400" size={24} />
                       </div>
                     </div>
 
@@ -172,7 +108,7 @@ export const Products = () => {
 
                       <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/10">
                         <span className="text-xl font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">{product.price}</span>
-                        <Button size="sm" variant="outline">Learn More</Button>
+                        <Button size="sm" variant="outline" onClick={() => navigate(`/products/${product.slug}`)}>Learn More</Button>
                       </div>
                     </div>
                   </Card>

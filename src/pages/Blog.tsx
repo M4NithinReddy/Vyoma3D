@@ -5,7 +5,7 @@ import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
 import { Card } from '../components/Card';
 
-const posts = [
+export const posts = [
   { id: 1, title: 'Top 5 Design for Additive Manufacturing Best Practices', excerpt: 'Learn how to optimize your designs for 3D printing success with topology optimization and lattice structures.', author: 'Sarah Chen', date: '2025-10-01', readTime: '8 min', tags: ['3D Printing', 'DfAM'], image: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=400' },
   { id: 2, title: 'FEA vs CFD: When to Use Each Simulation Type', excerpt: 'Understanding the differences between finite element analysis and computational fluid dynamics for better product validation.', author: 'Michael Torres', date: '2025-09-28', readTime: '10 min', tags: ['CAE', 'Simulation'], image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400' },
   { id: 3, title: 'Material Selection Guide for SLA 3D Printing', excerpt: 'Compare properties of standard, tough, flexible, and engineering resins to choose the right material for your application.', author: 'Dr. Emily Watson', date: '2025-09-25', readTime: '6 min', tags: ['Materials', '3D Printing'], image: 'https://images.pexels.com/photos/1089440/pexels-photo-1089440.jpeg?auto=compress&cs=tinysrgb&w=400' }
