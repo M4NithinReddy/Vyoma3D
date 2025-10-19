@@ -1,25 +1,27 @@
 import { motion } from 'framer-motion';
-import { Network, TrendingUp, Cpu, DollarSign } from 'lucide-react';
+import { Network, TrendingUp, Cpu, DollarSign, Beaker, Wrench } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 
 const services = [
-  { icon: Network, title: 'Digital Twin Development', description: 'Create virtual replicas for real-time monitoring and predictive maintenance', benefits: ['Real-time monitoring', 'Predictive analytics', 'Reduced downtime'] },
-  { icon: Cpu, title: 'Industry 4.0 Integration', description: 'Smart manufacturing solutions with IoT and AI integration', benefits: ['Process automation', 'Data-driven decisions', 'Quality control'] },
-  { icon: TrendingUp, title: 'Process Optimization', description: 'Streamline workflows and eliminate inefficiencies', benefits: ['Increased throughput', 'Reduced cycle time', 'Better quality'] },
-  { icon: DollarSign, title: 'Cost Reduction Analysis', description: 'Identify opportunities to reduce manufacturing costs', benefits: ['Material savings', 'Labor optimization', 'Waste reduction'] }
+  { icon: Beaker, title: 'Taguchi / DOE Studies', description: 'Design of Experiments for robust, efficient process optimization', benefits: ['Parameter screening', 'Noise reduction', 'Data-driven control'] },
+  { icon: TrendingUp, title: 'Optimization Studies', description: 'Multi-objective design & process optimization', benefits: ['Weight/strength trade-offs', 'Cycle-time minimization', 'Cost/performance balance'] },
+  { icon: Wrench, title: 'Failure Analysis', description: 'Root cause investigation and corrective actions', benefits: ['Fractography & simulation', 'Process audits', 'CAPA implementation'] },
+  { icon: Network, title: 'Digital Twin Development', description: 'Virtual replicas for real-time monitoring & prediction', benefits: ['Real-time monitoring', 'Predictive analytics', 'Reduced downtime'] },
+  { icon: Cpu, title: 'Industry 4.0 Integration', description: 'IoT-enabled, data-driven manufacturing systems', benefits: ['Process automation', 'Quality control', 'Traceability'] },
+  { icon: DollarSign, title: 'Cost Reduction Analysis', description: 'Identify and prioritize cost-saving opportunities', benefits: ['Material savings', 'Labor optimization', 'Waste reduction'] }
 ];
 
 export const ServicesSpecialized = () => {
   return (
     <>
-      <SEO title="Specialized Consulting - Digital Twin & Industry 4.0" description="Advanced consulting services including digital twin development, Industry 4.0 integration, and process optimization." />
+      <SEO title="Specialized Services - Taguchi, Optimization, Digital Twin" description="Taguchi/DOE, optimization studies, failure analysis, digital twin, Industry 4.0 integration, and cost reduction consulting." />
 
       <div className="section-padding">
         <div className="container mx-auto container-padding">
-          <SectionHeader badge="Consulting" title="Transform Your Manufacturing" description="Strategic consulting to modernize operations and drive competitive advantage." />
+          <SectionHeader badge="Consulting" title="Specialized Engineering & Manufacturing Consulting" description="Taguchi/DOE, optimization, failure analysis, digital twin, Industry 4.0, and cost reduction to elevate performance." />
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {services.map((svc, i) => (

@@ -6,7 +6,7 @@ import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
 import { Card } from '../components/Card';
 
-const cases = [
+export const cases = [
   { id: 1, title: 'Aerospace Bracket Optimization', industry: 'Aerospace', service: 'CAE', tech: 'Topology Optimization', challenge: 'Reduce weight while maintaining strength', solution: 'Generative design + FEA validation', result: '42% weight reduction, passed all tests', image: 'https://images.pexels.com/photos/73910/mars-mars-rover-space-travel-robot-73910.jpeg?auto=compress&cs=tinysrgb&w=600' },
   { id: 2, title: 'Custom Surgical Guide', industry: 'Healthcare', service: '3D Printing', tech: 'SLA Biocompatible', challenge: 'Patient-specific implant guide', solution: 'CT scan to CAD model, SLA printing', result: '98% accuracy, reduced surgery time by 30 min', image: 'https://images.pexels.com/photos/4226903/pexels-photo-4226903.jpeg?auto=compress&cs=tinysrgb&w=600' },
   { id: 3, title: 'Automotive Fixture Tooling', industry: 'Automotive', service: '3D Printing', tech: 'FDM Nylon CF', challenge: 'Expensive metal tooling', solution: '3D printed jigs with carbon fiber nylon', result: '75% cost savings, 1-week delivery', image: 'https://images.pexels.com/photos/190574/pexels-photo-190574.jpeg?auto=compress&cs=tinysrgb&w=600' },

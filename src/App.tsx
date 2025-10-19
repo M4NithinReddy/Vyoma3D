@@ -14,7 +14,9 @@ const ServicesCAE = lazy(() => import('./pages/ServicesCAE').then(m => ({ defaul
 const Services3DPrinting = lazy(() => import('./pages/Services3DPrinting').then(m => ({ default: m.Services3DPrinting })));
 const ServicesSpecialized = lazy(() => import('./pages/ServicesSpecialized').then(m => ({ default: m.ServicesSpecialized })));
 const Products = lazy(() => import('./pages/Products').then(m => ({ default: m.Products })));
+const ProductDetail = lazy(() => import('./pages/ProductDetail').then(m => ({ default: m.ProductDetail })));
 const Training = lazy(() => import('./pages/Training').then(m => ({ default: m.Training })));
+const SyllabusDetail = lazy(() => import('./pages/SyllabusDetail').then(m => ({ default: m.SyllabusDetail })));
 const Workshops = lazy(() => import('./pages/Workshops').then(m => ({ default: m.Workshops })));
 const Industries = lazy(() => import('./pages/Industries').then(m => ({ default: m.Industries })));
 const IndustryAerospace = lazy(() => import('./pages/IndustryAerospace').then(m => ({ default: m.IndustryAerospace })));
@@ -23,8 +25,10 @@ const IndustryHealthcare = lazy(() => import('./pages/IndustryHealthcare').then(
 const IndustryManufacturing = lazy(() => import('./pages/IndustryManufacturing').then(m => ({ default: m.IndustryManufacturing })));
 const IndustryResearch = lazy(() => import('./pages/IndustryResearch').then(m => ({ default: m.IndustryResearch })));
 const CaseStudies = lazy(() => import('./pages/CaseStudies').then(m => ({ default: m.CaseStudies })));
+const CaseStudyDetail = lazy(() => import('./pages/CaseStudyDetail').then(m => ({ default: m.CaseStudyDetail })));
 const Gallery = lazy(() => import('./pages/Gallery').then(m => ({ default: m.Gallery })));
 const Blog = lazy(() => import('./pages/Blog').then(m => ({ default: m.Blog })));
+const BlogDetail = lazy(() => import('./pages/BlogDetail').then(m => ({ default: m.BlogDetail })));
 const GetQuote = lazy(() => import('./pages/GetQuote').then(m => ({ default: m.GetQuote })));
 const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
 const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Contact })));
@@ -63,7 +67,9 @@ function App() {
             <Route path="/services/3d-printing" element={<Services3DPrinting />} />
             <Route path="/services/specialized" element={<ServicesSpecialized />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products/:slug" element={<ProductDetail />} />
             <Route path="/training" element={<Training />} />
+            <Route path="/training/syllabus/:slug" element={<SyllabusDetail />} />
             <Route path="/workshops" element={<Workshops />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/industries/aerospace-defense" element={<IndustryAerospace />} />
@@ -72,8 +78,10 @@ function App() {
             <Route path="/industries/industrial-manufacturing" element={<IndustryManufacturing />} />
             <Route path="/industries/research-development" element={<IndustryResearch />} />
             <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/get-a-quote" element={<GetQuote />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

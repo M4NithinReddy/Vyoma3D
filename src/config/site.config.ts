@@ -8,12 +8,12 @@ export const siteConfig = {
     phone: "+1 (555) 123-4567",
     whatsapp: "+15551234567",
     address: {
-      line1: "123 Innovation Drive",
-      line2: "Tech Park, Suite 400",
-      city: "San Francisco",
-      state: "CA",
-      zip: "94105",
-      country: "USA"
+      line1: "Plot no 40, 5-01-054, Vijaynagar Colony",
+      line2: "Near Secunderabad Club, Picket",
+      city: "Secunderabad",
+      state: "Telangana",
+      zip: "500009",
+      country: "India"
     }
   },
 
@@ -64,7 +64,9 @@ export const siteConfig = {
           { label: "Case Studies", href: "/case-studies" },
           { label: "Gallery", href: "/gallery" }
         ]
-      }
+      },
+      { label: "About", href: "/about" },
+      { label: "Contact", href: "/contact" }
     ]
   }
 };

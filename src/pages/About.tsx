@@ -5,10 +5,12 @@ import { SectionHeader } from '../components/SectionHeader';
 import { Card } from '../components/Card';
 
 const values = [
-  { icon: Target, title: 'Excellence', description: 'Uncompromising quality in every project' },
-  { icon: Users, title: 'Partnership', description: 'Your success is our priority' },
-  { icon: Award, title: 'Innovation', description: 'Pushing boundaries with cutting-edge tech' },
-  { icon: Eye, title: 'Transparency', description: 'Clear communication, honest timelines' }
+  { icon: Award, title: 'PRECISION', description: 'Excellence in every detail, accuracy in every solution. Delivering engineering solutions and 3D printed parts with exacting standards. Maintaining rigorous quality control throughout all processes. Ensuring every project meets or exceeds specifications.' },
+  { icon: Eye, title: 'INNOVATION', description: 'Pushing boundaries, creating possibilities. Continuously advancing our technical capabilities and methodologies. Embracing new technologies and creative problem-solving approaches. Leading industry transformation through breakthrough solutions.' },
+  { icon: Users, title: 'EMPOWERMENT', description: 'Enabling our clients to achieve more. Providing tools, knowledge, and support that amplify our clients\' capabilities. Making advanced engineering and 3D printing accessible to all business sizes. Building long-term partnerships that drive mutual success.' },
+  { icon: Target, title: 'INTEGRITY', description: 'Honest, transparent, and reliable in all we do. Delivering on our commitments with consistency and transparency. Building trust through ethical business practices. Communicating openly and taking responsibility for our work.' },
+  { icon: Users, title: 'COLLABORATION', description: 'Achieving excellence through partnership. Working closely with clients to understand and solve their unique challenges. Fostering teamwork internally and with external partners. Sharing knowledge and expertise to drive industry advancement.' },
+  { icon: Award, title: 'SUSTAINABILITY', description: 'Engineering for today and tomorrow. Promoting environmentally responsible manufacturing practices. Optimizing material usage and minimizing waste through advanced 3D printing. Supporting clients in achieving their sustainability goals.' }
 ];
 
 const team = [
@@ -28,22 +30,22 @@ const milestones = [
 export const About = () => {
   return (
     <>
-      <SEO title="About Us" description="Learn about VYOMA3D's mission, team, and commitment to engineering excellence." />
+      <SEO title="About Us" description="Vision, Mission, and Core Values of VYOMA3D." />
 
       <div className="section-padding">
         <div className="container mx-auto container-padding">
-          <SectionHeader badge="About Us" title="Engineering the Future" description="We're a team of passionate engineers dedicated to transforming product development through advanced CAD, CAE, and 3D printing technologies." />
+          <SectionHeader badge="About Us" title="Engineering Possibilities" description="Transforming how the world designs, creates, and innovates through precision technology and limitless imagination." />
 
           <div className="grid md:grid-cols-2 gap-12 mb-24 max-w-5xl mx-auto">
             <Card>
-              <Target className="text-violet-400 mb-4" size={40} />
-              <h3 className="text-2xl font-bold text-white mb-3">Our Mission</h3>
-              <p className="text-gray-400">To democratize advanced engineering capabilities, enabling companies of all sizes to innovate faster, reduce costs, and bring better products to market.</p>
+              <Eye className="text-cyan-400 mb-4" size={40} />
+              <h3 className="text-2xl font-bold text-white mb-3">Vision Statement</h3>
+              <p className="text-gray-400">To unlock infinite possibilities in engineering and manufacturing, transforming how the world designs, creates, and innovates through precision technology and limitless imagination.</p>
             </Card>
             <Card>
-              <Eye className="text-cyan-400 mb-4" size={40} />
-              <h3 className="text-2xl font-bold text-white mb-3">Our Vision</h3>
-              <p className="text-gray-400">To be the global leader in engineering services, recognized for excellence, innovation, and the transformative impact we create for our clients.</p>
+              <Target className="text-violet-400 mb-4" size={40} />
+              <h3 className="text-2xl font-bold text-white mb-3">Mission Statement</h3>
+              <p className="text-gray-400">We empower innovators, engineers, and businesses to bring their boldest ideas to life through exceptional engineering services and advanced 3D printing solutions. By combining technical expertise, cutting-edge technology, and unwavering commitment to quality, we accelerate innovation from concept to reality.</p>
             </Card>
           </div>
 

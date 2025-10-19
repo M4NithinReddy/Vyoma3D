@@ -8,27 +8,29 @@ import { AnimatedSection, AnimatedItem } from '../components/AnimatedSection';
 import { staggerContainer } from '../lib/animations';
 
 const capabilities = [
-  { icon: Box, title: '3D Part Design', description: 'Complex geometries and parametric modeling' },
-  { icon: FileText, title: '2D Drawings', description: 'GD&T compliant technical documentation' },
-  { icon: RotateCcw, title: 'Reverse Engineering', description: 'From physical parts to CAD models' },
-  { icon: CheckCircle, title: 'DFM Optimization', description: 'Design for manufacturing excellence' }
+  { icon: Box, title: '3D Product Design & Development', description: 'Concept to detailed parametric modeling and assemblies' },
+  { icon: FileText, title: '2D Technical Drawings', description: 'Engineering drawings, GD&T, part and assembly docs' },
+  { icon: RotateCcw, title: '2D ↔ 3D Conversions', description: 'Build 3D from sketches/blueprints and derive 2D from 3D' },
+  { icon: RotateCcw, title: 'Reverse Engineering', description: 'Recreate CAD from physical parts and scans' },
+  { icon: CheckCircle, title: 'Design Optimization', description: 'Performance enhancement and cost reduction' },
+  { icon: CheckCircle, title: 'Visualization & Rendering', description: 'Photorealistic renders and animations' }
 ];
 
 const deliverables = ['Native CAD files (STEP, IGES, Parasolid)', 'PDF drawings with GD&T', 'Bill of Materials (BOM)', '3D PDF for review', 'Assembly instructions'];
 
-const software = ['SolidWorks', 'CATIA', 'AutoCAD', 'Inventor', 'Creo', 'NX'];
+const software = ['SolidWorks', 'CATIA', 'Creo', 'Inventor', 'Fusion 360', 'AutoCAD'];
 
 export const ServicesCAD = () => {
   return (
     <>
-      <SEO title="CAD Services - 3D Design & Engineering" description="Expert CAD services including 3D modeling, 2D drawings, reverse engineering, and design optimization." />
+      <SEO title="CAD Services - 3D Design, Drawings, Reverse Engineering" description="3D product design, 2D drawings, 2D↔3D conversions, reverse engineering, optimization, and rendering." />
 
       <div className="section-padding pt-32">
         <div className="container mx-auto container-padding">
           <SectionHeader
             badge="CAD Services"
-            title="Precision 3D Design & Engineering"
-            description="Transform your concepts into production-ready CAD models with our expert design team."
+            title="Precision CAD for Product Development"
+            description="3D design, 2D drawings, conversions, reverse engineering, optimization, and visualization."
           />
 
           <motion.div
@@ -38,7 +40,7 @@ export const ServicesCAD = () => {
             variants={staggerContainer}
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
           >
-            {capabilities.map((cap, i) => (
+            {capabilities.map((cap) => (
               <AnimatedItem key={cap.title}>
                 <Card className="text-center h-full">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-violet-500/20 to-violet-600/20 border border-violet-500/20 flex items-center justify-center">

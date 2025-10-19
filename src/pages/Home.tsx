@@ -195,23 +195,22 @@ export const Home = () => {
               className="mb-6"
             >
               <span className="inline-block px-4 py-2 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-400 text-sm font-semibold">
-                Engineering Innovation Through Advanced 3D Technology
+                Pioneering infinite possibilities in engineering and manufacturing
               </span>
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
               <span className="bg-gradient-to-r from-white via-violet-200 to-cyan-200 bg-clip-text text-transparent">
-                From Concept to Reality,
+                Precision Technology
               </span>
               <br />
               <span className="bg-gradient-to-r from-cyan-200 via-violet-200 to-white bg-clip-text text-transparent">
-                Faster Than Ever
+                Limitless Imagination
               </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Accelerate product development with world-class CAD/CAE services, precision 3D printing, and expert training.
-              <span className="text-violet-400 font-medium"> Transform your engineering workflow today.</span>
+              We empower innovators and businesses to bring their boldest ideas to life through exceptional engineering services and advanced 3D printing solutions—accelerating innovation from concept to reality with uncompromising quality and expertise.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
