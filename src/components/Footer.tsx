@@ -12,12 +12,11 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-violet-600 to-cyan-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">V3</span>
-              </div>
-              <span className="text-2xl font-bold font-['Space_Grotesk'] bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-                {siteConfig.name}
-              </span>
+              <img
+                src={siteConfig.logo}
+                alt={`${siteConfig.name} logo`}
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <p className="text-gray-400 mb-6 max-w-sm">
               {siteConfig.tagline}

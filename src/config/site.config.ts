@@ -3,6 +3,8 @@ export const siteConfig = {
   tagline: "Engineering Innovation Through Advanced 3D Technology",
   description: "Leading provider of CAD/CAE services, 3D printing solutions, and engineering training.",
 
+  logo: "https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760969482/12_flcvep.png",
+
   contact: {
     email: "info@vyoma3d.com",
     phone: "+1 (555) 123-4567",
@@ -44,7 +46,9 @@ export const siteConfig = {
           { label: "Automotive", href: "/industries/automotive" },
           { label: "Healthcare", href: "/industries/healthcare" },
           { label: "Industrial Manufacturing", href: "/industries/industrial-manufacturing" },
-          { label: "Research & Development", href: "/industries/research-development" }
+          { label: "Research & Development", href: "/industries/research-development" },
+          { label: "Agriculture", href: "/industries/agriculture" },
+          { label: "Education", href: "/industries/education" }
         ]
       },
       { label: "Products", href: "/products" },

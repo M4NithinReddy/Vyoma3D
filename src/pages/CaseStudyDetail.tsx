@@ -50,7 +50,7 @@ export const CaseStudyDetail = () => {
             <Card className="overflow-hidden p-0">
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="relative">
-                  <img src={cs.image} alt={cs.title} className="w-full h-[420px] md:h-[560px] object-cover" />
+                  <img src={cs.image} alt={cs.title} className="w-full h-[420px] md:h-[560px] object-cover" style={cs.id === 2 ? { objectPosition: 'center 70%' } : undefined} />
                 </div>
                 <div className="p-10 md:p-14">
                   <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">{cs.title}</h1>

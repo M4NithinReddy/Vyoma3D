@@ -24,6 +24,8 @@ const IndustryAutomotive = lazy(() => import('./pages/IndustryAutomotive').then(
 const IndustryHealthcare = lazy(() => import('./pages/IndustryHealthcare').then(m => ({ default: m.IndustryHealthcare })));
 const IndustryManufacturing = lazy(() => import('./pages/IndustryManufacturing').then(m => ({ default: m.IndustryManufacturing })));
 const IndustryResearch = lazy(() => import('./pages/IndustryResearch').then(m => ({ default: m.IndustryResearch })));
+const IndustryAgriculture = lazy(() => import('./pages/IndustryAgriculture').then(m => ({ default: m.IndustryAgriculture })));
+const IndustryEducation = lazy(() => import('./pages/IndustryEducation').then(m => ({ default: m.IndustryEducation })));
 const CaseStudies = lazy(() => import('./pages/CaseStudies').then(m => ({ default: m.CaseStudies })));
 const CaseStudyDetail = lazy(() => import('./pages/CaseStudyDetail').then(m => ({ default: m.CaseStudyDetail })));
 const Gallery = lazy(() => import('./pages/Gallery').then(m => ({ default: m.Gallery })));
@@ -77,6 +79,8 @@ function App() {
             <Route path="/industries/healthcare" element={<IndustryHealthcare />} />
             <Route path="/industries/industrial-manufacturing" element={<IndustryManufacturing />} />
             <Route path="/industries/research-development" element={<IndustryResearch />} />
+            <Route path="/industries/agriculture" element={<IndustryAgriculture />} />
+            <Route path="/industries/education" element={<IndustryEducation />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
             <Route path="/gallery" element={<Gallery />} />

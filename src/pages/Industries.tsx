@@ -1,17 +1,37 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Rocket, Car, Heart, Factory, Beaker } from 'lucide-react';
+import { Rocket, Car, Heart, Factory, Beaker, Leaf, GraduationCap } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
 import { Card } from '../components/Card';
+import { siteConfig } from '../config/site.config';
 
-const industries = [
-  { icon: Rocket, title: 'Aerospace & Defense', href: '/industries/aerospace-defense', description: 'Lightweight components, rapid prototyping, and certification support' },
-  { icon: Car, title: 'Automotive', href: '/industries/automotive', description: 'Tooling, fixtures, and functional prototypes for faster time-to-market' },
-  { icon: Heart, title: 'Healthcare', href: '/industries/healthcare', description: 'Medical devices, surgical guides, and anatomical models' },
-  { icon: Factory, title: 'Industrial Manufacturing', href: '/industries/industrial-manufacturing', description: 'Jigs, fixtures, and custom tooling to optimize production' },
-  { icon: Beaker, title: 'Research & Development', href: '/industries/research-development', description: 'Complex prototypes and validation for cutting-edge innovations' }
-];
+const iconMap: Record<string, any> = {
+  'Aerospace & Defense': Rocket,
+  'Automotive': Car,
+  'Healthcare': Heart,
+  'Industrial Manufacturing': Factory,
+  'Research & Development': Beaker,
+  'Agriculture': Leaf,
+  'Education': GraduationCap
+};
+
+const descriptionMap: Record<string, string> = {
+  'Aerospace & Defense': 'Lightweight components, rapid prototyping, and certification support',
+  'Automotive': 'Tooling, fixtures, and functional prototypes for faster time-to-market',
+  'Healthcare': 'Medical devices, surgical guides, and anatomical models',
+  'Industrial Manufacturing': 'Jigs, fixtures, and custom tooling to optimize production',
+  'Research & Development': 'Complex prototypes and validation for cutting-edge innovations',
+  'Agriculture': 'Agri-equipment parts, fixtures, and custom components for field-ready validation',
+  'Education': 'Academic labs, training models, and prototyping for research and teaching'
+};
+
+const industries = (siteConfig.nav.main.find(i => i.label === 'Industries')?.megaMenu || []).map(item => ({
+  icon: iconMap[item.label] || Factory,
+  title: item.label,
+  href: item.href,
+  description: descriptionMap[item.label] || 'Specialized solutions tailored to your domain'
+}));
 
 export const Industries = () => {
   return (
