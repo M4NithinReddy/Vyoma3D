@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "VYOMA3D",
+  name: "Vyoma3D",
   tagline: "Engineering Innovation Through Advanced 3D Technology",
   description: "Leading provider of CAD/CAE services, 3D printing solutions, and engineering training.",
 
