@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { siteConfig } from '../config/site.config';
 
 interface SEOProps {
   title?: string;
@@ -10,15 +11,16 @@ interface SEOProps {
 
 export const SEO = ({ title, description, image, url, jsonLd }: SEOProps) => {
   useEffect(() => {
-    if (title) document.title = title;
+    const constantTitle = siteConfig.name;
+    document.title = constantTitle;
 
     const metaTags = [
       { name: 'description', content: description },
-      { property: 'og:title', content: title },
+      { property: 'og:title', content: constantTitle },
       { property: 'og:description', content: description },
       { property: 'og:image', content: image },
       { property: 'og:url', content: url },
-      { name: 'twitter:title', content: title },
+      { name: 'twitter:title', content: constantTitle },
       { name: 'twitter:description', content: description },
       { name: 'twitter:image', content: image }
     ];
