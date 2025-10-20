@@ -7,11 +7,11 @@ import { SectionHeader } from '../components/SectionHeader';
 import { Card } from '../components/Card';
 
 export const cases = [
-  { id: 1, title: 'Aerospace Bracket Optimization', industry: 'Aerospace', service: 'CAE', tech: 'Topology Optimization', challenge: 'Reduce weight while maintaining strength', solution: 'Generative design + FEA validation', result: '42% weight reduction, passed all tests', image: 'https://images.pexels.com/photos/73910/mars-mars-rover-space-travel-robot-73910.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { id: 2, title: 'Custom Surgical Guide', industry: 'Healthcare', service: '3D Printing', tech: 'SLA Biocompatible', challenge: 'Patient-specific implant guide', solution: 'CT scan to CAD model, SLA printing', result: '98% accuracy, reduced surgery time by 30 min', image: 'https://images.pexels.com/photos/4226903/pexels-photo-4226903.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { id: 3, title: 'Automotive Fixture Tooling', industry: 'Automotive', service: '3D Printing', tech: 'FDM Nylon CF', challenge: 'Expensive metal tooling', solution: '3D printed jigs with carbon fiber nylon', result: '75% cost savings, 1-week delivery', image: 'https://images.pexels.com/photos/190574/pexels-photo-190574.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { id: 4, title: 'Heat Exchanger CFD', industry: 'Industrial', service: 'CAE', tech: 'CFD Analysis', challenge: 'Poor cooling performance', solution: 'Flow simulation and design iteration', result: '35% efficiency improvement', image: 'https://images.pexels.com/photos/414806/pexels-photo-414806.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { id: 5, title: 'Drone Frame Prototype', industry: 'Aerospace', service: '3D Printing', tech: 'SLA + FDM', challenge: 'Rapid iteration for R&D', solution: 'Multi-material prototyping', result: '15 iterations in 3 weeks', image: 'https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&w=600' }
+  { id: 1, title: 'Aerospace Bracket Optimization', industry: 'Aerospace', service: 'CAE', tech: 'Topology Optimization', challenge: 'Reduce weight while maintaining strength', solution: 'Generative design + FEA validation', result: '42% weight reduction, passed all tests', image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760970839/Generated_Image_October_20_2025_-_8_02PM_wnttpg.png' },
+  { id: 2, title: 'Custom Surgical Guide', industry: 'Healthcare', service: '3D Printing', tech: 'SLA Biocompatible', challenge: 'Patient-specific implant guide', solution: 'CT scan to CAD model, SLA printing', result: '98% accuracy, reduced surgery time by 30 min', image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760971717/Generated_Image_October_20_2025_-_8_17PM_zziwep.png' },
+  { id: 3, title: 'Automotive Fixture Tooling', industry: 'Automotive', service: '3D Printing', tech: 'FDM Nylon CF', challenge: 'Expensive metal tooling', solution: '3D printed jigs with carbon fiber nylon', result: '75% cost savings, 1-week delivery', image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760971212/Generated_Image_October_20_2025_-_8_09PM_1_tzoovh.png' },
+  { id: 4, title: 'Heat Exchanger CFD', industry: 'Industrial', service: 'CAE', tech: 'CFD Analysis', challenge: 'Poor cooling performance', solution: 'Flow simulation and design iteration', result: '35% efficiency improvement', image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760971406/Generated_Image_October_20_2025_-_8_11PM_mzayou.png' },
+  { id: 5, title: 'Drone Frame Prototype', industry: 'Aerospace', service: '3D Printing', tech: 'SLA + FDM', challenge: 'Rapid iteration for R&D', solution: 'Multi-material prototyping', result: '15 iterations in 3 weeks', image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760971407/Generated_Image_October_20_2025_-_8_12PM_q2qujl.png' }
 ];
 
 export const CaseStudies = () => {
@@ -39,7 +39,7 @@ export const CaseStudies = () => {
               <motion.div key={cs.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}>
                 <Link to={`/case-studies/${cs.id}`}>
                   <Card className="h-full hover:border-violet-500/50 overflow-hidden p-0">
-                    <img src={cs.image} alt={cs.title} className="w-full h-48 object-cover" />
+                    <img src={cs.image} alt={cs.title} className="w-full h-48 object-cover" style={cs.id === 2 ? { objectPosition: 'center 70%' } : undefined} />
                     <div className="p-6">
                       <div className="flex gap-2 mb-3">
                         <span className="px-2 py-1 bg-violet-500/10 border border-violet-500/20 rounded text-violet-400 text-xs">{cs.industry}</span>

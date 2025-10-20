@@ -42,7 +42,7 @@ export const organizationSchema = {
   name: siteConfig.name,
   description: siteConfig.description,
   url: 'https://vyoma3d.com',
-  logo: 'https://vyoma3d.com/logo.png',
+  logo: siteConfig.logo,
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: siteConfig.contact.phone,

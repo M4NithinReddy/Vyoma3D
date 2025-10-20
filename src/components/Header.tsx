@@ -68,12 +68,11 @@ export const Header = () => {
       <nav className="container mx-auto px-4 py-4 relative z-10">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-violet-600 to-cyan-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">V3</span>
-            </div>
-            <span className="text-2xl font-bold font-['Space_Grotesk'] bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-              {siteConfig.name}
-            </span>
+            <img
+              src={siteConfig.logo}
+              alt={`${siteConfig.name} logo`}
+              className="h-10 w-auto object-contain"
+            />
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
@@ -110,7 +109,7 @@ export const Header = () => {
                           className="block px-4 py-3 hover:bg-white/5 transition-colors"
                         >
                           <div className="font-medium text-white">{subItem.label}</div>
-                          {subItem.desc && (
+                          {'desc' in subItem && subItem.desc && (
                             <div className="text-sm text-gray-400 mt-0.5">{subItem.desc}</div>
                           )}
                         </Link>
@@ -195,7 +194,7 @@ export const Header = () => {
                               className="block py-2 px-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
                             >
                               <div className="font-medium">{subItem.label}</div>
-                              {subItem.desc && (
+                              {'desc' in subItem && subItem.desc && (
                                 <div className="text-xs text-gray-500 mt-0.5">{subItem.desc}</div>
                               )}
                             </Link>

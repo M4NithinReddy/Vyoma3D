@@ -8,6 +8,7 @@ import { Card } from '../components/Card';
 import { LogoTicker } from '../components/LogoTicker';
 import { AnimatedSection, AnimatedItem } from '../components/AnimatedSection';
 import { staggerContainer, staggerItem } from '../lib/animations';
+import { siteConfig } from '../config/site.config';
 
 const services = [
   {
@@ -44,13 +45,21 @@ const services = [
   }
 ];
 
-const industries = [
-  { name: 'Aerospace & Defense', href: '/industries/aerospace-defense', icon: Rocket, color: 'from-blue-500 to-cyan-500', desc: 'Lightweight structures, rapid prototyping' },
-  { name: 'Automotive', href: '/industries/automotive', icon: Cog, color: 'from-orange-500 to-red-500', desc: 'Tooling, fixtures, crash testing' },
-  { name: 'Healthcare', href: '/industries/healthcare', icon: Heart, color: 'from-pink-500 to-rose-500', desc: 'Medical devices, surgical guides' },
-  { name: 'Industrial', href: '/industries/industrial-manufacturing', icon: Users, color: 'from-violet-500 to-purple-500', desc: 'Custom jigs, production tooling' },
-  { name: 'Research & R&D', href: '/industries/research-development', icon: TrendingUp, color: 'from-green-500 to-emerald-500', desc: 'Complex prototypes, validation' }
-];
+const industryBg: Record<string, string> = {
+  'Aerospace & Defense': 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760969809/ChatGPT_Image_Oct_20_2025_07_45_55_PM_llid7u.png',
+  'Automotive': 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760952622/ChatGPT_Image_Oct_20_2025_03_00_05_PM_gn1d9i.png',
+  'Healthcare': 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760952940/ChatGPT_Image_Oct_20_2025_03_05_23_PM_rxi6im.png',
+  'Industrial Manufacturing': 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760969809/ChatGPT_Image_Oct_20_2025_07_46_03_PM_u11nse.png',
+  'Research & Development': 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760969811/ChatGPT_Image_Oct_20_2025_07_45_50_PM_hwhtod.png',
+  'Agriculture': 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760970164/ChatGPT_Image_Oct_20_2025_07_52_16_PM_jpplbz.png',
+  'Education': 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760969809/ChatGPT_Image_Oct_20_2025_07_45_34_PM_vpo3li.png'
+};
+
+const industries = (siteConfig.nav.main.find(i => i.label === 'Industries')?.megaMenu || []).map(item => ({
+  name: item.label,
+  href: item.href,
+  bg: industryBg[item.label] || 'https://images.pexels.com/photos/3184632/pexels-photo-3184632.jpeg?auto=compress&cs=tinysrgb&h=400'
+}));
 
 const stats = [
   { value: '92%', label: 'Time Saved', sublabel: 'Compared to traditional methods' },
@@ -106,7 +115,7 @@ const blogPosts = [
     id: 1,
     title: 'Top 5 Design for Additive Manufacturing Best Practices',
     excerpt: 'Learn how to optimize your designs for 3D printing success with topology optimization, lattice structures, and support strategies that reduce material waste while improving strength.',
-    image: 'https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760971718/Generated_Image_October_20_2025_-_8_16PM_rv6cdz.png',
     category: '3D Printing',
     readTime: '8 min',
     date: 'Nov 15, 2025'
@@ -115,7 +124,7 @@ const blogPosts = [
     id: 2,
     title: 'FEA vs CFD: When to Use Each Simulation Type',
     excerpt: 'Understanding the differences between finite element analysis and computational fluid dynamics for better product validation and cost-effective testing strategies.',
-    image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760971904/Generated_Image_October_20_2025_-_8_21PM_iil46f.png',
     category: 'CAE',
     readTime: '10 min',
     date: 'Nov 12, 2025'
@@ -124,7 +133,7 @@ const blogPosts = [
     id: 3,
     title: 'Material Selection Guide for SLA 3D Printing',
     excerpt: 'Compare properties of standard, tough, flexible, and engineering resins. Make informed material choices based on mechanical properties, temperature resistance, and application requirements.',
-    image: 'https://images.pexels.com/photos/1089440/pexels-photo-1089440.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760971951/Generated_Image_October_20_2025_-_8_21PM_1_lij6lj.png',
     category: 'Materials',
     readTime: '6 min',
     date: 'Nov 10, 2025'
@@ -338,23 +347,32 @@ export const Home = () => {
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
-            className="grid md:grid-cols-3 lg:grid-cols-5 gap-6"
+            className=""
           >
-            {industries.map((industry) => (
-              <AnimatedItem key={industry.name}>
-                <Link to={industry.href}>
-                  <Card className="text-center group h-full">
-                    <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${industry.color} p-0.5 group-hover:scale-110 transition-transform duration-300`}>
-                      <div className="w-full h-full bg-gray-900 rounded-2xl flex items-center justify-center">
-                        <industry.icon className="text-white" size={24} />
+            <div className="overflow-hidden py-2">
+              <motion.div
+                animate={{ x: [0, -1920] }}
+                transition={{ duration: 35, repeat: Infinity, ease: 'linear' }}
+                className="flex gap-6 items-stretch"
+              >
+                {[...industries, ...industries, ...industries].map((industry, i) => (
+                  <Link to={industry.href} key={`${industry.name}-${i}`} className="shrink-0">
+                    <div className="group relative w-72 h-48 rounded-2xl overflow-hidden border border-white/10 bg-black/40">
+                      <img
+                        src={industry.bg}
+                        alt={industry.name}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        <h3 className="font-bold text-white text-base">{industry.name}</h3>
                       </div>
                     </div>
-                    <h3 className="font-bold text-white mb-2">{industry.name}</h3>
-                    <p className="text-xs text-gray-400">{industry.desc}</p>
-                  </Card>
-                </Link>
-              </AnimatedItem>
-            ))}
+                  </Link>
+                ))}
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
