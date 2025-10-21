@@ -37,6 +37,7 @@ const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Con
 const Privacy = lazy(() => import('./pages/Privacy').then(m => ({ default: m.Privacy })));
 const Terms = lazy(() => import('./pages/Terms').then(m => ({ default: m.Terms })));
 const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })));
+const Careers = lazy(() => import('./pages/Careers').then(m => ({ default: m.Careers })));
 
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -88,6 +89,7 @@ function App() {
             <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/get-a-quote" element={<GetQuote />} />
             <Route path="/about" element={<About />} />
+            <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />

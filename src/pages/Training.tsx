@@ -20,7 +20,7 @@ export const Training = () => {
   const navigate = useNavigate();
   return (
     <>
-      <SEO title="CAD/CAE Training & Workshops" description="Professional training programs in SolidWorks, ANSYS, 3D printing, and advanced simulation tools." />
+      <SEO title="CAD/CAE Training & Workshops" description="Professional, hands-on training programs across CAD, CAE, and 3D printing with industry-focused curricula." />
 
       <div className="section-padding">
         <div className="container mx-auto container-padding">

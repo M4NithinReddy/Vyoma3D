@@ -16,7 +16,7 @@ const services = [
   {
     icon: Zap,
     title: 'CAE Services',
-    description: 'FEA, CFD, fatigue, crash, modal, thermal, and design validation with ANSYS/HyperMesh/OptiStruct.',
+    description: 'FEA, CFD, fatigue, crash, modal, thermal, MBD, and design validation across development stages.',
     href: '/services/cae',
     features: ['FEA & Optimization', 'CFD & Heat Transfer', 'Crash/Impact & Modal', 'Design Validation']
   },
