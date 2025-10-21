@@ -77,11 +77,12 @@ const whyChooseUs = [
 ];
 
 const process = [
-  { step: '01', title: 'Discover & Consult', description: 'Deep dive into your requirements, constraints, and success criteria through collaborative consultation.' },
-  { step: '02', title: 'Design & Engineer', description: 'Create detailed CAD models with parametric design principles for easy iteration and optimization.' },
-  { step: '03', title: 'Simulate & Validate', description: 'Comprehensive FEA, CFD, and multi-physics analysis to validate performance before manufacturing.' },
-  { step: '04', title: 'Manufacture & Print', description: 'Precision 3D printing with advanced materials, process control, and real-time quality monitoring.' },
-  { step: '05', title: 'Finish & Deliver', description: 'Professional post-processing, quality inspection, and secure delivery with full documentation.' }
+  { step: '01', title: 'PRECISION', description: 'Excellence in every detail, accuracy in every solution. Delivering engineering solutions and 3D printed parts with exacting standards. Maintaining rigorous quality control throughout all processes. Ensuring every project meets or exceeds specifications.' },
+  { step: '02', title: 'INNOVATION', description: 'Pushing boundaries, creating possibilities. Continuously advancing our technical capabilities and methodologies. Embracing new technologies and creative problem-solving approaches. Leading industry transformation through breakthrough solutions.' },
+  { step: '03', title: 'EMPOWERMENT', description: "Enabling our clients to achieve more. Providing tools, knowledge, and support that amplify our clients' capabilities. Making advanced engineering and 3D printing accessible to all business sizes. Building long-term partnerships that drive mutual success." },
+  { step: '04', title: 'INTEGRITY', description: 'Honest, transparent, and reliable in all we do. Delivering on our commitments with consistency and transparency. Building trust through ethical business practices. Communicating openly and taking responsibility for our work.' },
+  { step: '05', title: 'COLLABORATION', description: 'Achieving excellence through partnership. Working closely with clients to understand and solve their unique challenges. Fostering teamwork internally and with external partners. Sharing knowledge and expertise to drive industry advancement.' },
+  { step: '06', title: 'SUSTAINABILITY', description: 'Engineering for today and tomorrow. Promoting environmentally responsible manufacturing practices. Optimizing material usage and minimizing waste through advanced 3D printing. Supporting clients in achieving their sustainability goals.' }
 ];
 
 const testimonials = [
