@@ -9,6 +9,7 @@ import { LogoTicker } from '../components/LogoTicker';
 import { AnimatedSection, AnimatedItem } from '../components/AnimatedSection';
 import { staggerContainer, staggerItem } from '../lib/animations';
 import { siteConfig } from '../config/site.config';
+import { useEffect, useRef, useState } from 'react';
 
 const services = [
   {
@@ -155,6 +156,29 @@ const galleryItems = [
 ];
 
 export const Home = () => {
+  const heroVideos = [
+    'https://samplelib.com/lib/preview/mp4/sample-5s.mp4',
+    'https://samplelib.com/lib/preview/mp4/sample-10s.mp4',
+    'https://samplelib.com/lib/preview/mp4/sample-15s.mp4'
+  ];
+  const [currentVideo, setCurrentVideo] = useState(0);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentVideo((v) => (v + 1) % heroVideos.length);
+    }, 8000);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      // restart playback on source change
+      videoRef.current.load();
+      const playPromise = videoRef.current.play();
+      if (playPromise) playPromise.catch(() => {});
+    }
+  }, [currentVideo]);
   return (
     <>
       <SEO
@@ -190,70 +214,95 @@ export const Home = () => {
           className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/10 to-pink-500/10 rounded-full blur-3xl"
         />
 
-        <div className="container mx-auto container-padding py-32 relative z-10">
+        <div className="container mx-auto container-padding py-24 md:py-28 relative z-10">
+          <div className="grid md:grid-cols-2 items-center gap-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-2xl"
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2 }}
+                className="mb-6"
+              >
+                <span className="inline-block px-4 py-2 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-400 text-sm font-semibold">
+                  Pioneering infinite possibilities in engineering and manufacturing
+                </span>
+              </motion.div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-[1.15] mb-4 md:mb-6">
+                <span className="bg-gradient-to-r from-white via-violet-200 to-cyan-200 bg-clip-text text-transparent">
+                  Engineering Excellence.
+                </span>
+                <br />
+                <span className="bg-gradient-to-r from-cyan-200 via-violet-200 to-white bg-clip-text text-transparent">
+                  Infinite Possibilities.
+                </span>
+              </h1>
+
+              <p className="text-base md:text-lg text-gray-300 mb-8 md:mb-10 max-w-3xl leading-relaxed">
+                VYOMA3D combines advanced engineering services with precision 3D printing solutions to bring your innovative ideas to reality.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-start mb-4">
+                <Button size="lg" onClick={() => window.location.href = '/get-a-quote'}>
+                  Get a Quote
+                  <ArrowRight size={20} />
+                </Button>
+                <Button variant="outline" size="lg" onClick={() => window.location.href = '/case-studies'}>
+                  View Case Studies
+                </Button>
+                <Button variant="ghost" size="lg" onClick={() => window.location.href = '/gallery'}>
+                  <Play size={20} />
+                  Watch Demo
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black/40 shadow-xl">
+                <div className="aspect-video w-full">
+                  <video
+                    key={currentVideo}
+                    ref={videoRef}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    playsInline
+                    onEnded={() => setCurrentVideo((v) => (v + 1) % heroVideos.length)}
+                  >
+                    <source src={heroVideos[currentVideo]} type="video/mp4" />
+                  </video>
+                </div>
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              </div>
+            </motion.div>
+          </div>
+
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-5xl mx-auto"
+            initial="initial"
+            animate="animate"
+            variants={staggerContainer}
+            className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mb-6"
-            >
-              <span className="inline-block px-4 py-2 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-400 text-sm font-semibold">
-                Pioneering infinite possibilities in engineering and manufacturing
-              </span>
-            </motion.div>
-
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-white via-violet-200 to-cyan-200 bg-clip-text text-transparent">
-                Precision Technology
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-cyan-200 via-violet-200 to-white bg-clip-text text-transparent">
-                Limitless Imagination
-              </span>
-            </h1>
-
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              We empower innovators and businesses to bring their boldest ideas to life through exceptional engineering services and advanced 3D printing solutions—accelerating innovation from concept to reality with uncompromising quality and expertise.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Button size="lg" onClick={() => window.location.href = '/get-a-quote'}>
-                Get a Quote
-                <ArrowRight size={20} />
-              </Button>
-              <Button variant="outline" size="lg" onClick={() => window.location.href = '/case-studies'}>
-                View Case Studies
-              </Button>
-              <Button variant="ghost" size="lg" onClick={() => window.location.href = '/gallery'}>
-                <Play size={20} />
-                Watch Demo
-              </Button>
-            </div>
-
-            <motion.div
-              initial="initial"
-              animate="animate"
-              variants={staggerContainer}
-              className="grid grid-cols-2 md:grid-cols-4 gap-8"
-            >
-              {stats.map((stat, i) => (
-                <AnimatedItem key={stat.label}>
-                  <div className="text-center">
-                    <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                      {stat.value}
-                    </div>
-                    <div className="text-white font-semibold mb-1">{stat.label}</div>
-                    <div className="text-gray-500 text-xs">{stat.sublabel}</div>
+            {stats.map((stat, i) => (
+              <AnimatedItem key={stat.label}>
+                <div className="text-center">
+                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                    {stat.value}
                   </div>
-                </AnimatedItem>
-              ))}
-            </motion.div>
+                  <div className="text-white font-semibold mb-1">{stat.label}</div>
+                  <div className="text-gray-500 text-xs">{stat.sublabel}</div>
+                </div>
+              </AnimatedItem>
+            ))}
           </motion.div>
         </div>
       </section>

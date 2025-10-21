@@ -8,17 +8,17 @@ import { AnimatedSection, AnimatedItem } from '../components/AnimatedSection';
 import { staggerContainer } from '../lib/animations';
 
 const capabilities = [
-  { icon: Box, title: '3D Product Design & Development', description: 'Concept to detailed parametric modeling and assemblies' },
-  { icon: FileText, title: '2D Technical Drawings', description: 'Engineering drawings, GD&T, part and assembly docs' },
-  { icon: RotateCcw, title: '2D ↔ 3D Conversions', description: 'Build 3D from sketches/blueprints and derive 2D from 3D' },
-  { icon: RotateCcw, title: 'Reverse Engineering', description: 'Recreate CAD from physical parts and scans' },
+  { icon: Box, title: '3D Product Design & Development', description: 'Complete product conceptualization to detailed design' },
+  { icon: FileText, title: '2D Technical Drawings', description: 'Engineering drawings, assembly drawings, part drawings' },
+  { icon: RotateCcw, title: '3D to 2D Conversion', description: 'Converting 3D models to technical drawings' },
+  { icon: RotateCcw, title: '2D to 3D Model Creation', description: 'Building 3D models from sketches, images, or blueprints' },
+  { icon: CheckCircle, title: 'Assembly Design', description: 'Multi-part assembly modeling and documentation' },
+  { icon: CheckCircle, title: 'Reverse Engineering', description: 'Recreating CAD models from physical parts' },
   { icon: CheckCircle, title: 'Design Optimization', description: 'Performance enhancement and cost reduction' },
-  { icon: CheckCircle, title: 'Visualization & Rendering', description: 'Photorealistic renders and animations' }
+  { icon: CheckCircle, title: 'Product Visualization & Rendering', description: 'Photorealistic renderings and animations' }
 ];
 
 const deliverables = ['Native CAD files (STEP, IGES, Parasolid)', 'PDF drawings with GD&T', 'Bill of Materials (BOM)', '3D PDF for review', 'Assembly instructions'];
-
-const software = ['SolidWorks', 'CATIA', 'Creo', 'Inventor', 'Fusion 360', 'AutoCAD'];
 
 export const ServicesCAD = () => {
   return (
@@ -67,23 +67,7 @@ export const ServicesCAD = () => {
                 </ul>
               </Card>
             </AnimatedSection>
-
-            <AnimatedSection>
-              <Card>
-                <h3 className="text-2xl font-bold text-white mb-6">Software We Use</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {software.map((sw) => (
-                    <motion.div
-                      key={sw}
-                      whileHover={{ scale: 1.05, y: -2 }}
-                      className="px-4 py-3 bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-xl text-gray-300 text-center font-medium hover:border-violet-500/30 transition-colors cursor-default"
-                    >
-                      {sw}
-                    </motion.div>
-                  ))}
-                </div>
-              </Card>
-            </AnimatedSection>
+            
           </div>
 
           <AnimatedSection>

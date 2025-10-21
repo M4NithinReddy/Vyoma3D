@@ -7,9 +7,46 @@ import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 
 const processes = [
-  { id: 'sla', icon: Droplet, title: 'SLA - Stereolithography', description: 'High-detail resin prints with smooth surface finish', resolution: '25-100 microns', materials: ['Standard Resin', 'Tough Resin', 'Flexible', 'Castable'], useCases: ['Prototypes', 'Jewelry', 'Dental models'] },
-  { id: 'fdm', icon: Layers, title: 'FDM - Fused Deposition', description: 'Durable thermoplastic parts for functional testing', resolution: '100-300 microns', materials: ['PLA', 'ABS', 'PETG', 'Nylon', 'TPU'], useCases: ['Functional prototypes', 'Tooling', 'End-use parts'] },
-  { id: 'dlp', icon: Printer, title: 'DLP - Digital Light Processing', description: 'Fast, high-precision prints with excellent detail', resolution: '35-75 microns', materials: ['Engineering Resin', 'Biocompatible', 'High-Temp'], useCases: ['Medical devices', 'Precision parts', 'Master molds'] }
+  {
+    id: 'sla',
+    icon: Droplet,
+    title: 'SLA - Stereolithography (Premium)',
+    description: 'Ultra-fine detail up to 25 microns with exceptional surface finish',
+    resolution: '25-100 microns',
+    materials: ['Standard Resin', 'Tough Resin', 'Flexible Resin', 'Castable Resin', 'Biocompatible Resin', 'Clear Resin'],
+    useCases: [
+      'High-Precision Prototyping',
+      'Functional Parts Production',
+      'Dental & Medical Applications',
+      'Jewelry & Art Models',
+      'Investment Casting Patterns',
+      'Transparent Parts'
+    ]
+  },
+  {
+    id: 'fdm',
+    icon: Layers,
+    title: 'FDM - Fused Deposition',
+    description: 'Durable thermoplastic parts for functional testing and production',
+    resolution: '100-300 microns',
+    materials: ['PLA', 'ABS', 'PETG', 'TPU', 'Carbon Fiber Reinforced', 'Metal-Filled'],
+    useCases: [
+      'Rapid Prototyping',
+      'Functional Prototypes',
+      'Large Part Manufacturing (up to 300×300×300 mm)',
+      'Multi-Material Printing (PVA Supports)',
+      'Low-Volume Production Parts'
+    ]
+  },
+  {
+    id: 'dlp',
+    icon: Printer,
+    title: 'DLP - Digital Light Processing',
+    description: 'Fast batch production with high detail and smooth finish',
+    resolution: '35-75 microns',
+    materials: ['Engineering Resin', 'Biocompatible', 'High-Temperature'],
+    useCases: ['Dental Applications', 'High-Detail Miniatures', 'Precision Models']
+  }
 ];
 
 export const Services3DPrinting = () => {
@@ -18,7 +55,7 @@ export const Services3DPrinting = () => {
 
   return (
     <>
-      <SEO title="3D Printing Services - SLA, FDM, DLP" description="Professional 3D printing services with SLA, FDM, and DLP technologies. Fast turnaround and premium quality." />
+      <SEO title="3D Printing Services - SLA, FDM, DLP" description="SLA premium service, FDM functional and large-format parts, DLP high-detail batch production, and comprehensive post-processing." />
 
       <div className="section-padding">
         <div className="container mx-auto container-padding">
@@ -85,11 +122,11 @@ export const Services3DPrinting = () => {
               </Card>
               <Card>
                 <h3 className="text-xl font-bold text-white mb-2">SLS – Future Expansion</h3>
-                <p className="text-gray-400 text-sm mb-2">Nylon parts production, strong functional components with no support structures.</p>
+                <p className="text-gray-400 text-sm mb-2">Nylon parts production and direct metal printing roadmap with no support structures required.</p>
                 <ul className="list-disc pl-5 text-gray-300 text-sm space-y-1">
-                  <li>Nylon PA12/PA11 for durable parts</li>
-                  <li>Complex geometries without supports</li>
-                  <li>Roadmap: polymer SLS, metal AM (DMLS)</li>
+                  <li>Nylon parts production for strong, functional components</li>
+                  <li>No support structures: complex geometries achievable</li>
+                  <li>Metal part printing (DMLS) roadmap</li>
                 </ul>
               </Card>
             </div>

@@ -21,7 +21,7 @@ const team = [
 
 const milestones = [
   { year: '2018', event: 'Founded VYOMA3D' },
-  { year: '2019', event: 'ISO 9001 Certified' },
+  { year: '2019', event: 'Started branches in Bangalore and Tirupati' },
   { year: '2021', event: 'Expanded to 3D printing services' },
   { year: '2023', event: '500+ projects delivered' },
   { year: '2025', event: 'Opened training academy' }

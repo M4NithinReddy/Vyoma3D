@@ -42,13 +42,16 @@ export const SEO = ({ title, description, image, url, jsonLd }: SEOProps) => {
     });
 
     if (jsonLd) {
-      let script = document.querySelector('script[type="application/ld+json"]');
-      if (!script) {
-        script = document.createElement('script');
-        script.type = 'application/ld+json';
-        document.head.appendChild(script);
+      let script = document.querySelector<HTMLScriptElement>('script[type="application/ld+json"]');
+      if (!(script instanceof HTMLScriptElement)) {
+        const s = document.createElement('script');
+        s.setAttribute('type', 'application/ld+json');
+        document.head.appendChild(s);
+        script = s as HTMLScriptElement;
       }
-      script.textContent = JSON.stringify(jsonLd);
+      if (script) {
+        script.textContent = JSON.stringify(jsonLd);
+      }
     }
   }, [title, description, image, url, jsonLd]);
 

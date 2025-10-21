@@ -14,6 +14,22 @@ const services = [
   { icon: DollarSign, title: 'Cost Reduction Analysis', description: 'Identify and prioritize cost-saving opportunities', benefits: ['Material savings', 'Labor optimization', 'Waste reduction'] }
 ];
 
+const digitalManufacturing = [
+  { icon: Cpu, title: 'Industry 4.0 Integration', description: 'IoT-enabled manufacturing and data-driven workflows', bullets: ['Connected equipment', 'Real-time dashboards', 'Closed-loop control'] },
+  { icon: Network, title: 'Digital Twin Development', description: 'Virtual product/process lifecycle replicas', bullets: ['Lifecycle simulation', 'Predictive maintenance', 'Throughput optimization'] },
+  { icon: Wrench, title: 'Additive Manufacturing Consulting', description: 'Process selection and optimization for AM', bullets: ['Material/process selection', 'Build strategy', 'Cost & lead-time modeling'] },
+  { icon: Beaker, title: 'Quality Assurance Systems', description: 'Dimensional inspection and validation frameworks', bullets: ['Inspection plans', 'Gauge R&R', 'Traceability & reports'] },
+  { icon: TrendingUp, title: 'Supply Chain Integration', description: 'On-demand, distributed manufacturing enablement', bullets: ['Vendor onboarding', 'Digital workflows', 'Inventory reduction'] }
+];
+
+const consultingAdvisory = [
+  { icon: Cpu, title: 'Technology Selection', description: 'Guidance on CAD/CAE/AM technology stacks', bullets: ['Requirements mapping', 'Tool capability fit', 'Roadmapping'] },
+  { icon: Wrench, title: 'Process Improvement', description: 'Lean and throughput-focused enhancements', bullets: ['Bottleneck analysis', 'Standard work', 'OEE improvement'] },
+  { icon: DollarSign, title: 'Cost Reduction Studies', description: 'Design and process optimization for cost', bullets: ['DfX methods', 'Material/utilization', 'Cycle-time cuts'] },
+  { icon: Beaker, title: 'Feasibility Studies', description: 'Technical and commercial viability assessments', bullets: ['Risk analysis', 'Pilot builds', 'ROI modeling'] },
+  { icon: Network, title: 'IP Development Support', description: 'Patent research and development assistance', bullets: ['Prior art scans', 'Claims alignment', 'Prototyping support'] }
+];
+
 export const ServicesSpecialized = () => {
   return (
     <>
@@ -38,6 +54,48 @@ export const ServicesSpecialized = () => {
                       </div>
                     ))}
                   </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <SectionHeader title="Digital Manufacturing Solutions" />
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {digitalManufacturing.map((item, i) => (
+              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+                <Card className="h-full">
+                  <item.icon className="text-orange-400 mb-4" size={40} />
+                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-400 mb-4">{item.description}</p>
+                  <ul className="space-y-2">
+                    {item.bullets.map(b => (
+                      <li key={b} className="flex items-center gap-2 text-sm text-gray-300">
+                        <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <SectionHeader title="Consulting & Advisory" />
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {consultingAdvisory.map((item, i) => (
+              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+                <Card className="h-full">
+                  <item.icon className="text-orange-400 mb-4" size={40} />
+                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-400 mb-4">{item.description}</p>
+                  <ul className="space-y-2">
+                    {item.bullets.map(b => (
+                      <li key={b} className="flex items-center gap-2 text-sm text-gray-300">
+                        <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
                 </Card>
               </motion.div>
             ))}
