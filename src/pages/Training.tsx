@@ -7,9 +7,6 @@ import { Button } from '../components/Button';
 import { trainingCourses } from '../data/training';
 import { useNavigate } from 'react-router-dom';
 
-const formatINR = (amount: number) =>
-  new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
-
 const formats = [
   { icon: Users, title: 'Corporate Training', description: 'On-site training customized for your team' },
   { icon: Globe, title: 'Online Live', description: 'Interactive sessions with expert instructors' },
@@ -49,7 +46,6 @@ export const Training = () => {
                       <h3 className="text-xl font-bold text-white mb-1">{track.title}</h3>
                       <p className="text-sm text-gray-400">{track.level} • {track.duration}</p>
                     </div>
-                    <span className="text-2xl font-bold text-violet-400">{formatINR(track.priceInr)}</span>
                   </div>
                   <ul className="space-y-2 mb-4">
                     {track.topics.map(topic => (
@@ -72,7 +68,7 @@ export const Training = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg" onClick={() => window.location.href = '/get-a-quote'}>
+            <Button size="lg" onClick={() => window.location.href = '/enroll'}>
               Enroll Now
             </Button>
           </div>

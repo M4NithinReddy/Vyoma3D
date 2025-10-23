@@ -11,7 +11,7 @@ export type TrainingCourse = {
 export const trainingCourses: TrainingCourse[] = [
   {
     slug: 'solidworks-mastery',
-    title: 'SolidWorks Mastery',
+    title: 'CAD Design Mastery',
     duration: '40 hours',
     level: 'Beginner to Advanced',
     topics: ['Part modeling', 'Assemblies', 'Drawings', 'Surface design'],
@@ -26,7 +26,7 @@ export const trainingCourses: TrainingCourse[] = [
   },
   {
     slug: 'ansys-fea',
-    title: 'ANSYS FEA',
+    title: 'Finite Element Analysis (FEA)',
     duration: '32 hours',
     level: 'Intermediate',
     topics: ['Structural analysis', 'Modal analysis', 'Thermal', 'Optimization'],
@@ -55,7 +55,7 @@ export const trainingCourses: TrainingCourse[] = [
   },
   {
     slug: 'hypermesh-advanced',
-    title: 'HyperMesh Advanced',
+    title: 'Advanced Pre-processing & Meshing',
     duration: '36 hours',
     level: 'Advanced',
     topics: ['Pre-processing', 'Meshing', 'CAE setup', 'Crash analysis'],

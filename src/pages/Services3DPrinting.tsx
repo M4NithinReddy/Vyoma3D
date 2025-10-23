@@ -1,43 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Printer, Droplet, Layers } from 'lucide-react';
+import { Printer } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 
 const processes = [
-  {
-    id: 'sla',
-    icon: Droplet,
-    title: 'SLA - Stereolithography (Premium)',
-    description: 'Ultra-fine detail up to 25 microns with exceptional surface finish',
-    resolution: '25-100 microns',
-    materials: ['Standard Resin', 'Tough Resin', 'Flexible Resin', 'Castable Resin', 'Biocompatible Resin', 'Clear Resin'],
-    useCases: [
-      'High-Precision Prototyping',
-      'Functional Parts Production',
-      'Dental & Medical Applications',
-      'Jewelry & Art Models',
-      'Investment Casting Patterns',
-      'Transparent Parts'
-    ]
-  },
-  {
-    id: 'fdm',
-    icon: Layers,
-    title: 'FDM - Fused Deposition',
-    description: 'Durable thermoplastic parts for functional testing and production',
-    resolution: '100-300 microns',
-    materials: ['PLA', 'ABS', 'PETG', 'TPU', 'Carbon Fiber Reinforced', 'Metal-Filled'],
-    useCases: [
-      'Rapid Prototyping',
-      'Functional Prototypes',
-      'Large Part Manufacturing (up to 300×300×300 mm)',
-      'Multi-Material Printing (PVA Supports)',
-      'Low-Volume Production Parts'
-    ]
-  },
   {
     id: 'dlp',
     icon: Printer,
@@ -50,12 +19,12 @@ const processes = [
 ];
 
 export const Services3DPrinting = () => {
-  const [activeTab, setActiveTab] = useState('sla');
+  const [activeTab, setActiveTab] = useState('dlp');
   const active = processes.find(p => p.id === activeTab)!;
 
   return (
     <>
-      <SEO title="3D Printing Services - SLA, FDM, DLP" description="SLA premium service, FDM functional and large-format parts, DLP high-detail batch production, and comprehensive post-processing." />
+      <SEO title="3D Printing Services - DLP" description="DLP high-detail batch production and comprehensive post-processing." />
 
       <div className="section-padding">
         <div className="container mx-auto container-padding">
