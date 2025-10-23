@@ -6,6 +6,7 @@ import { ScrollProgress } from './components/ScrollProgress';
 import { ChatAssistant } from './components/ChatAssistant';
 import { LoadingAnimation } from './components/LoadingAnimation';
 import { ScrollToTop } from './components/ScrollToTop';
+import { WhatsAppButton } from './components/WhatsAppButton';
 
 const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })));
 const Services = lazy(() => import('./pages/Services').then(m => ({ default: m.Services })));
@@ -32,6 +33,7 @@ const Gallery = lazy(() => import('./pages/Gallery').then(m => ({ default: m.Gal
 const Blog = lazy(() => import('./pages/Blog').then(m => ({ default: m.Blog })));
 const BlogDetail = lazy(() => import('./pages/BlogDetail').then(m => ({ default: m.BlogDetail })));
 const GetQuote = lazy(() => import('./pages/GetQuote').then(m => ({ default: m.GetQuote })));
+const Enroll = lazy(() => import('./pages/Enroll').then(m => ({ default: m.Enroll })));
 const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
 const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Contact })));
 const Privacy = lazy(() => import('./pages/Privacy').then(m => ({ default: m.Privacy })));
@@ -88,6 +90,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/get-a-quote" element={<GetQuote />} />
+            <Route path="/enroll" element={<Enroll />} />
             <Route path="/about" element={<About />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
@@ -96,6 +99,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
+        <WhatsAppButton />
         <Footer />
       </div>
     </Router>

@@ -132,7 +132,7 @@ export const Header = () => {
             <Button variant="outline" size="sm" onClick={() => navigate('/get-a-quote')}>
               Get a Quote
             </Button>
-            <Button size="sm" onClick={() => navigate('/training')}>
+            <Button size="sm" onClick={() => navigate('/enroll')}>
               Enroll Now
             </Button>
           </div>
@@ -215,7 +215,7 @@ export const Header = () => {
                   <Button variant="outline" size="sm" onClick={() => navigate('/get-a-quote')}>
                     Get a Quote
                   </Button>
-                  <Button size="sm" onClick={() => navigate('/training')}>
+                  <Button size="sm" onClick={() => navigate('/enroll')}>
                     Enroll Now
                   </Button>
                 </div>

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Minimize2 } from 'lucide-react';
-import { Button } from './Button';
 
 interface Message {
   text: string;
@@ -14,7 +13,7 @@ export const ChatAssistant = () => {
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
-      text: "Hello! I'm VYOMA3D Assistant. How can I help you today?",
+      text: "Hi! I'm VYOMA3D Assistant. Which service do you need help with today — CAD/CAE Services, 3D Printing, Products, or Training?",
       isUser: false,
       timestamp: new Date()
     }
@@ -23,9 +22,13 @@ export const ChatAssistant = () => {
 
   const quickActions = [
     'Get a quote',
-    'View services',
     'Training programs',
-    'Contact sales'
+    'View syllabus',
+    'Products',
+    '3D Printing',
+    'CAD/CAE Services',
+    'Enroll',
+    'Contact'
   ];
 
   const handleSend = () => {
@@ -38,29 +41,50 @@ export const ChatAssistant = () => {
     }]);
 
     setTimeout(() => {
-      const responses: { [key: string]: string } = {
-        'quote': 'I can help you get a quote! Please visit our Get a Quote page or provide your project details here.',
-        'services': 'We offer CAD/CAE Services, 3D Printing, Products, and Training. Which would you like to know more about?',
-        'training': 'Our training programs include CAD mastery, FEA certification, and Design for AM. Interested in any specific track?',
-        'contact': 'You can reach us at info@vyoma3d.com or call +1 (555) 123-4567. Would you like to schedule a consultation?'
-      };
-
-      const lowerInput = input.toLowerCase();
-      let response = 'Thank you for your message. Our team will get back to you shortly. You can also explore our services or get a quote directly!';
-
-      for (const [key, value] of Object.entries(responses)) {
-        if (lowerInput.includes(key)) {
-          response = value;
-          break;
+      const intents: Array<{ keywords: string[]; reply: string }> = [
+        {
+          keywords: ['hi', 'hello', 'hey', 'good morning', 'good afternoon', 'good evening'],
+          reply: 'Hello! Which service do you need help with — CAD/CAE Services, 3D Printing, Products, or Training?'
+        },
+        {
+          keywords: ['quote', 'pricing', 'price', 'cost', 'estimate', 'quotation'],
+          reply: 'To get a quick estimate, please use our Get a Quote form. We will reach out within 24 hours.'
+        },
+        {
+          keywords: ['service', 'services', 'cad', 'cae', 'design', 'simulation'],
+          reply: 'We offer CAD design, CAE/FEA simulation, and 3D printing services. Tell me which area you need help with.'
+        },
+        {
+          keywords: ['3d print', '3d printing', 'dlp', 'printing'],
+          reply: 'We provide DLP 3D printing with high detail and post-processing options. You can upload files via the Get a Quote page.'
+        },
+        {
+          keywords: ['training', 'course', 'learn', 'syllabus', 'enroll'],
+          reply: 'We run training programs in CAD, FEA and DfAM. You can view syllabi under Training or enroll via the Enroll page.'
+        },
+        {
+          keywords: ['product', 'scanner', 'printer', 'materials'],
+          reply: 'Check our Products section for available solutions. Let me know what product you are looking for.'
+        },
+        {
+          keywords: ['contact', 'call', 'phone', 'number', 'whatsapp'],
+          reply: 'You can reach us at info@vyoma3d.com or call +91 81421 49666. We are happy to help!'
         }
-      }
+      ];
+
+      const lower = input.toLowerCase();
+      const matched = intents.find(it => it.keywords.some(k => lower.includes(k)));
+
+      const response = matched
+        ? matched.reply
+        : 'Thanks! Which service do you need — CAD/CAE Services, 3D Printing, Products, or Training? For detailed assistance, please call +91 81421 49666 or email info@vyoma3d.com.';
 
       setMessages(prev => [...prev, {
         text: response,
         isUser: false,
         timestamp: new Date()
       }]);
-    }, 1000);
+    }, 600);
 
     setInput('');
   };

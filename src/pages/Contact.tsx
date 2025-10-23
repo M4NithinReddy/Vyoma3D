@@ -106,9 +106,14 @@ export const Contact = () => {
               <Card>
                 <Phone className="text-violet-400 mb-3" size={32} />
                 <h3 className="font-bold text-white mb-2">Phone</h3>
-                <a href={`tel:${siteConfig.contact.phone}`} className="text-gray-400 hover:text-white transition-colors">
-                  {siteConfig.contact.phone}
-                </a>
+                <div className="flex flex-col gap-2">
+                  <a href={`tel:${siteConfig.contact.phone}`} className="text-gray-400 hover:text-white transition-colors">
+                    {siteConfig.contact.phone}
+                  </a>
+                  <a href={`tel:${siteConfig.contact.whatsapp}`} className="text-gray-400 hover:text-white transition-colors">
+                    {siteConfig.contact.whatsapp}
+                  </a>
+                </div>
               </Card>
 
               <Card>

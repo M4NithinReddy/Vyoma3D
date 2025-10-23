@@ -7,8 +7,8 @@ export const siteConfig = {
 
   contact: {
     email: "info@vyoma3d.com",
-    phone: "+1 (555) 123-4567",
-    whatsapp: "+15551234567",
+    phone: "+918142149666",
+    whatsapp: "+918939790849",
     address: {
       line1: "Plot no 40, 5-01-054, Vijaynagar Colony",
       line2: "Near Secunderabad Club, Picket",
