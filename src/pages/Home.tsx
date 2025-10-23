@@ -158,28 +158,45 @@ const galleryItems = [
 
 export const Home = () => {
   const heroVideos = [
-    'https://samplelib.com/lib/preview/mp4/sample-5s.mp4',
-    'https://samplelib.com/lib/preview/mp4/sample-10s.mp4',
-    'https://samplelib.com/lib/preview/mp4/sample-15s.mp4'
+    'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1761237565/WhatsApp_Video_2025-10-23_at_12.11.59_AM_vcliou.mp4',
+    'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1761237567/WhatsApp_Video_2025-10-22_at_11.27.43_PM_jzwica.mp4'
   ];
   const [currentVideo, setCurrentVideo] = useState(0);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [isAActive, setIsAActive] = useState(true);
+  const videoARef = useRef<HTMLVideoElement | null>(null);
+  const videoBRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
-    const id = setInterval(() => {
-      setCurrentVideo((v) => (v + 1) % heroVideos.length);
-    }, 8000);
-    return () => clearInterval(id);
+    const a = videoARef.current;
+    const b = videoBRef.current;
+    if (!a || !b) return;
+    a.src = heroVideos[0];
+    a.play().catch(() => {});
+    const preloadIndex = (0 + 1) % heroVideos.length;
+    b.src = heroVideos[preloadIndex];
+    b.load();
   }, []);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      // restart playback on source change
-      videoRef.current.load();
-      const playPromise = videoRef.current.play();
-      if (playPromise) playPromise.catch(() => {});
+  const handleEnded = () => {
+    const nextIndex = (currentVideo + 1) % heroVideos.length;
+    const inactive = isAActive ? videoBRef.current : videoARef.current;
+    if (inactive) {
+      inactive.src = heroVideos[nextIndex];
+      const p = inactive.play();
+      if (p) {
+        p.finally(() => {
+          setIsAActive(!isAActive);
+          setCurrentVideo(nextIndex);
+        });
+      } else {
+        setIsAActive(!isAActive);
+        setCurrentVideo(nextIndex);
+      }
+    } else {
+      setIsAActive(!isAActive);
+      setCurrentVideo(nextIndex);
     }
-  }, [currentVideo]);
+  };
   return (
     <>
       <SEO
@@ -269,18 +286,25 @@ export const Home = () => {
               transition={{ duration: 0.8, delay: 0.1 }}
             >
               <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black/40 shadow-xl">
-                <div className="aspect-video w-full">
+                <div className="aspect-video w-full relative">
                   <video
-                    key={currentVideo}
-                    ref={videoRef}
-                    className="w-full h-full object-cover"
+                    ref={videoARef}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${isAActive ? 'opacity-100' : 'opacity-0'}`}
                     autoPlay
                     muted
                     playsInline
-                    onEnded={() => setCurrentVideo((v) => (v + 1) % heroVideos.length)}
-                  >
-                    <source src={heroVideos[currentVideo]} type="video/mp4" />
-                  </video>
+                    preload="auto"
+                    onEnded={handleEnded}
+                  />
+                  <video
+                    ref={videoBRef}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${!isAActive ? 'opacity-100' : 'opacity-0'}`}
+                    autoPlay
+                    muted
+                    playsInline
+                    preload="auto"
+                    onEnded={handleEnded}
+                  />
                 </div>
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               </div>

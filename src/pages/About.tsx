@@ -14,9 +14,8 @@ const values = [
 ];
 
 const team = [
-  { name: 'Dr. Rajesh Kumar', role: 'CEO & Founder', bio: '15+ years in aerospace CAE', image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300' },
-  { name: 'Sarah Mitchell', role: 'VP Engineering', bio: 'Ex-SpaceX, additive manufacturing expert', image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300' },
-  { name: 'Chen Wei', role: 'Head of CAD Services', bio: 'SolidWorks certified professional', image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=300' }
+  { name: 'Kiran bolisetty', role: 'Co-founder & Technical Director', bio: '12 years of experience in Automotive and Heavy vehicle industries CAE', image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761237565/WhatsApp_Image_2025-10-23_at_6.49.03_PM_hgwsyf.jpg' },
+  { name: 'Dr M.AjayKumar', role: 'Founder and Managing director', bio: 'PhD', image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761238362/WhatsApp_Image_2025-10-23_at_10.20.18_PM_wudzhv.jpg' }
 ];
 
 const milestones = [
@@ -63,10 +62,10 @@ export const About = () => {
           </div>
 
           <SectionHeader title="Leadership Team" />
-          <div className="grid md:grid-cols-3 gap-8 mb-24 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 mb-24 max-w-3xl mx-auto justify-items-center">
             {team.map((member, i) => (
               <motion.div key={member.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Card className="text-center">
+                <Card className="text-center w-80 h-72 flex flex-col justify-start">
                   <img src={member.image} alt={member.name} className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
                   <h3 className="font-bold text-white mb-1">{member.name}</h3>
                   <p className="text-violet-400 text-sm mb-2">{member.role}</p>
