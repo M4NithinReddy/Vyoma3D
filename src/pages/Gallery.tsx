@@ -4,6 +4,16 @@ import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
 
 const items = [
+  // Kaveri University – New submissions
+  { type: 'video', url: 'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1761495991/WhatsApp_Video_2025-10-24_at_3.08.02_PM_vwx7k3.mp4', caption: 'Presenting our prototypes – Kaveri University' },
+  { type: 'video', url: 'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1761495993/WhatsApp_Video_2025-10-24_at_3.08.03_PM_ndqp9q.mp4', caption: '3D-printed prototypes showcase – Kaveri University' },
+  { type: 'video', url: 'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1761495985/WhatsApp_Video_2025-10-24_at_3.08.01_PM_ts9h8v.mp4', caption: 'Hon’ble Governor of Telangana Shri Jishnu Dev Varma visiting our stall – Kaveri University' },
+  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495992/WhatsApp_Image_2025-10-24_at_3.08.03_PM_kcjcyj.jpg', caption: 'Workshop at Kaveri University' },
+  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495988/WhatsApp_Image_2025-10-24_at_3.08.01_PM_oohg8r.jpg', caption: 'With Hon’ble Governor Shri Jishnu Dev Varma, Shri G.V. Bhaskar Rao (Chairman, Kaveri Seeds), and Dr. V. Praveen Rao (Vice-Chancellor)' },
+  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495988/WhatsApp_Image_2025-10-24_at_3.07.59_PM_dg1uxc.jpg', caption: 'Kaveri University – Event moments' },
+  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495987/WhatsApp_Image_2025-10-24_at_3.07.59_PM_1_zvc649.jpg', caption: 'Presenting prototypes – Kaveri University' },
+  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495983/WhatsApp_Image_2025-10-24_at_3.08.31_PM_hrdwfl.jpg', caption: 'Vyoma3D Team – Kaveri University' },
+  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495982/WhatsApp_Image_2025-10-24_at_3.07.53_PM_a9m65p.jpg', caption: 'Explaining 3D printing to Hon’ble Governor Shri Jishnu Dev Varma – Kaveri University' },
   // Videos
   { type: 'video', url: 'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1761064434/WhatsApp_Video_2025-10-21_at_9.40.33_PM_rgjmyq.mp4', caption: 'Shop floor walk-through' },
   { type: 'video', url: 'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1761064437/WhatsApp_Video_2025-10-21_at_9.40.34_PM_i4f9fz.mp4', caption: 'Machine in operation' },
@@ -27,19 +37,6 @@ const items = [
   { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760871342/IMG_9351_zdjoqd.jpg', caption: 'DRDO School RCI – 3D Printing Workshop' },
   { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760871342/da9b8445-d678-4f78-8538-90c09cc61158_gvsgsr.jpg', caption: 'Kaveri University – Workshops' },
   { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760871341/IMG_9350_ap6kpj.jpg', caption: '3D Printing World Award – Trinity Media' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761063285/WhatsApp_Image_2025-10-21_at_21.37.09_3b6b26a1_g0c7e8.jpg', caption: 'Prototypes & Products' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761063284/WhatsApp_Image_2025-10-21_at_21.40.29_107125f0_vdcxre.jpg', caption: 'Prototypes & Products' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761063284/WhatsApp_Image_2025-10-21_at_21.37.25_a0edc21c_hjzhwe.jpg', caption: 'Prototypes & Products' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761063284/WhatsApp_Image_2025-10-21_at_21.37.26_a05337c5_ppoej2.jpg', caption: 'Prototypes & Products' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761063283/WhatsApp_Image_2025-10-21_at_21.40.28_81cc5c50_rda2hx.jpg', caption: 'Prototypes & Products' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761063283/WhatsApp_Image_2025-10-21_at_21.40.30_98921d4d_sf1pnr.jpg', caption: 'Prototypes & Products' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761063284/WhatsApp_Image_2025-10-21_at_21.37.26_abde6c88_rwwxdp.jpg', caption: 'Prototypes & Products' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761063283/WhatsApp_Image_2025-10-21_at_21.40.28_c1331077_fpgct7.jpg', caption: 'Prototypes & Products' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761063283/WhatsApp_Image_2025-10-21_at_21.40.33_5ab45161_w7qymn.jpg', caption: 'Prototypes & Products' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761063283/WhatsApp_Image_2025-10-21_at_21.40.32_d34eae6d_qzgvsc.jpg', caption: 'Prototypes & Products' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761063283/WhatsApp_Image_2025-10-21_at_21.40.31_38e54e2e_s7nskp.jpg', caption: 'Prototypes & Products' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761063282/WhatsApp_Image_2025-10-21_at_21.40.31_41a65f08_oys13g.jpg', caption: 'Prototypes & Products' },
-  
 ];
 
 export const Gallery = () => {
