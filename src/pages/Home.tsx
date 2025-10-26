@@ -158,6 +158,7 @@ const galleryItems = [
 
 export const Home = () => {
   const heroVideos = [
+    'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1761495991/WhatsApp_Video_2025-10-24_at_3.08.02_PM_vwx7k3.mp4',
     'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1761237565/WhatsApp_Video_2025-10-23_at_12.11.59_AM_vcliou.mp4',
     'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1761237567/WhatsApp_Video_2025-10-22_at_11.27.43_PM_jzwica.mp4'
   ];
@@ -482,6 +483,12 @@ export const Home = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section-padding">
+        <div className="container mx-auto container-padding">
+          <SectionHeader title="Our Clients" />
         </div>
       </section>
 
