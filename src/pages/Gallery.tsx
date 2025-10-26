@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
@@ -42,6 +42,19 @@ const items = [
 export const Gallery = () => {
   const [filter, setFilter] = useState('all');
   const filtered = filter === 'all' ? items : items.filter(i => i.type === filter);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  // keyboard navigation & close
+  useEffect(() => {
+    if (activeIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setActiveIndex(null);
+      if (e.key === 'ArrowRight') setActiveIndex((idx) => (idx === null ? null : (idx + 1) % filtered.length));
+      if (e.key === 'ArrowLeft') setActiveIndex((idx) => (idx === null ? null : (idx - 1 + filtered.length) % filtered.length));
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [activeIndex, filtered.length]);
 
   return (
     <>
@@ -78,6 +91,7 @@ export const Gallery = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: i * 0.04 }}
                 className="group cursor-pointer"
+                onClick={() => setActiveIndex(i)}
               >
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-xl hover:shadow-2xl transition-shadow duration-300">
                   <div className="relative w-full aspect-[4/3]">
@@ -107,6 +121,57 @@ export const Gallery = () => {
               </motion.div>
             ))}
           </div>
+
+          {activeIndex !== null && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={() => setActiveIndex(null)}>
+              <div className="relative max-w-6xl w-full mx-4" onClick={(e) => e.stopPropagation()}>
+                <button
+                  className="absolute -top-10 right-0 text-white/80 hover:text-white px-3 py-1 rounded"
+                  onClick={() => setActiveIndex(null)}
+                >
+                  Close
+                </button>
+
+                <div className="relative w-full">
+                  <div className="relative w-full aspect-video bg-black rounded-xl overflow-hidden border border-white/10">
+                    {filtered[activeIndex].type === 'photo' ? (
+                      <img
+                        src={filtered[activeIndex].url}
+                        alt={filtered[activeIndex].caption}
+                        className="absolute inset-0 w-full h-full object-contain"
+                      />
+                    ) : (
+                      <video
+                        key={filtered[activeIndex].url}
+                        src={filtered[activeIndex].url}
+                        className="absolute inset-0 w-full h-full object-contain"
+                        autoPlay
+                        controls
+                        playsInline
+                      />
+                    )}
+                  </div>
+
+                  <div className="mt-3 text-center text-white text-sm">{filtered[activeIndex].caption}</div>
+
+                  <button
+                    className="absolute left-0 top-1/2 -translate-y-1/2 px-3 py-2 text-white bg-black/40 hover:bg-black/60 rounded-full"
+                    onClick={() => setActiveIndex((idx) => (idx === null ? null : (idx - 1 + filtered.length) % filtered.length))}
+                    aria-label="Previous"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    className="absolute right-0 top-1/2 -translate-y-1/2 px-3 py-2 text-white bg-black/40 hover:bg-black/60 rounded-full"
+                    onClick={() => setActiveIndex((idx) => (idx === null ? null : (idx + 1) % filtered.length))}
+                    aria-label="Next"
+                  >
+                    ›
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>
