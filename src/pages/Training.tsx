@@ -7,8 +7,7 @@ import { Button } from '../components/Button';
 import { trainingCourses } from '../data/training';
 import { useNavigate } from 'react-router-dom';
 
-const formatINR = (amount: number) =>
-  new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
+// price display removed; formatter no longer required
 
 const formats = [
   { icon: Users, title: 'Corporate Training', description: 'On-site training customized for your team' },
@@ -40,18 +39,17 @@ export const Training = () => {
 
           <SectionHeader title="Training Tracks" />
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto items-stretch">
             {trainingCourses.map((track, i) => (
-              <motion.div key={track.slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Card>
+              <motion.div key={track.slug} className="h-full" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+                <Card className="h-full flex flex-col">
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className="text-xl font-bold text-white mb-1">{track.title}</h3>
                       <p className="text-sm text-gray-400">{track.level} • {track.duration}</p>
                     </div>
-                    <span className="text-2xl font-bold text-violet-400">{formatINR(track.priceInr)}</span>
                   </div>
-                  <ul className="space-y-2 mb-4">
+                  <ul className="space-y-2 mb-4 flex-grow">
                     {track.topics.map(topic => (
                       <li key={topic} className="text-gray-300 text-sm flex items-center gap-2">
                         <GraduationCap size={16} className="text-violet-400" />

@@ -25,6 +25,33 @@ export const trainingCourses: TrainingCourse[] = [
     ],
   },
   {
+    slug: 'ai-robotics-bonicbot',
+    title: 'AI & Robotics with BonicBot',
+    duration: '12 live sessions + mentoring',
+    level: 'Beginner to Advanced',
+    topics: [
+      '12 expert-led live AI & robotics sessions',
+      '1:1 personalized mentoring with robotics engineers',
+      'Bonic.ai platform access for coding and simulation',
+      'Scratch and Python programming for robotics',
+      'Object/facial recognition, gesture control, navigation',
+      'Curriculum integration add-on for institutes',
+      'Industry-relevant outcomes: AI, IoT, ROS fundamentals',
+      '300 AI Credits worth ₹5000 included'
+    ],
+    priceInr: 0,
+    syllabus: [
+      { section: 'Orientation & Setup', items: ['Program overview', 'Platform access (Bonic.ai)', 'S1/A1 hardware familiarization'] },
+      { section: 'Programming Fundamentals', items: ['Scratch basics', 'Python basics', 'Controlling actuators and sensors'] },
+      { section: 'AI Capabilities', items: ['Conversational AI', 'Vision: object & facial recognition', 'Gesture control workflows'] },
+      { section: 'Navigation & Autonomy', items: ['Manual vs autonomous modes', 'Face tracking & sequence recording', 'Intro to SLAM & LiDAR (A1)'] },
+      { section: 'ROS & Perception (Advanced)', items: ['ROS basics', 'Depth camera pipelines', 'Integrating AI models with ROS'] },
+      { section: 'IoT & Cloud', items: ['Cloud access & status monitoring', 'AI Credits usage & top-up', 'Remote operations and safety'] },
+      { section: 'Projects & Assessment', items: ['Mini-projects: recognition, gesture, navigation', 'Custom projects aligned to learner goals', 'Review and certification'] },
+      { section: 'Support & Warranty', items: ['6-month manufacturing defect warranty', 'Software updates & AI enhancements', 'Best practices and next steps'] }
+    ]
+  },
+  {
     slug: 'ansys-fea',
     title: 'ANSYS FEA',
     duration: '32 hours',

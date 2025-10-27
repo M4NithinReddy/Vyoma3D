@@ -7,9 +7,6 @@ import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { trainingCourses } from '../data/training';
 
-const formatINR = (amount: number) =>
-  new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
-
 export const SyllabusDetail = () => {
   const { slug } = useParams();
   const course = useMemo(() => trainingCourses.find(c => c.slug === slug), [slug]);
@@ -50,7 +47,6 @@ export const SyllabusDetail = () => {
               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-6">
                 <span className="inline-flex items-center gap-2"><Layers size={16} className="text-violet-400" />{course.level}</span>
                 <span className="inline-flex items-center gap-2"><Clock size={16} className="text-violet-400" />{course.duration}</span>
-                <span className="text-violet-300 font-semibold">{formatINR(course.priceInr)}</span>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 mb-8">

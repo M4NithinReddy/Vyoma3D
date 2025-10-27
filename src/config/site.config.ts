@@ -51,7 +51,7 @@ export const siteConfig = {
           { label: "Education", href: "/industries/education" }
         ]
       },
-      // { label: "Products", href: "/products" },
+      { label: "Products", href: "/products" },
       {
         label: "Training",
         href: "/training",
