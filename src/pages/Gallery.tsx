@@ -94,7 +94,7 @@ export const Gallery = () => {
                 onClick={() => setActiveIndex(i)}
               >
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                  <div className="relative w-full aspect-[4/3]">
+                  <div className="relative w-full aspect-video">
                     {item.type === 'photo' ? (
                       <img
                         src={item.url}
@@ -112,10 +112,8 @@ export const Gallery = () => {
                       />
                     )}
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <p className="text-white font-medium text-sm">{item.caption}</p>
-                    </div>
+                  <div className="p-3 border-t border-white/10 bg-black/30">
+                    <p className="text-white font-medium text-sm">{item.caption}</p>
                   </div>
                 </div>
               </motion.div>

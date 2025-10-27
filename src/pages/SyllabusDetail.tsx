@@ -86,7 +86,7 @@ export const SyllabusDetail = () => {
               </div>
 
               <div className="text-center mt-10">
-                <Button size="lg" onClick={() => window.location.href = '/enroll'}>
+                <Button size="lg" onClick={() => window.open('https://wa.me/918142149666?text=' + encodeURIComponent(`Hello! I want to enroll in: ${course.title}`))}>
                   Enroll Now
                 </Button>
               </div>

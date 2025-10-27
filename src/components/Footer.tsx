@@ -59,20 +59,12 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold text-white mb-4">Newsletter</h4>
-            <p className="text-gray-400 text-sm mb-4">Get the latest updates and insights.</p>
-            <form onSubmit={(e) => { e.preventDefault(); alert('Newsletter subscription confirmed!'); }} className="flex flex-col gap-2">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-violet-500"
-                required
-              />
-              <Button size="sm" type="submit">
-                <Mail size={16} />
-                Subscribe
-              </Button>
-            </form>
+            <h4 className="font-semibold text-white mb-4">Connect</h4>
+            <p className="text-gray-400 text-sm mb-4">Chat with us directly on WhatsApp.</p>
+            <Button size="sm" onClick={() => window.open('https://wa.me/918142149666?text=' + encodeURIComponent('Hello! I have a question.'))}>
+              <Mail size={16} />
+              Chat on WhatsApp
+            </Button>
           </div>
         </div>
 

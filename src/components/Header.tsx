@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '../config/site.config';
@@ -14,7 +14,6 @@ export const Header = () => {
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const { isDark, toggle } = useDarkMode();
   const location = useLocation();
-  const navigate = useNavigate();
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -129,10 +128,10 @@ export const Header = () => {
             >
               {isDark ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-            <Button variant="outline" size="sm" onClick={() => navigate('/get-a-quote')}>
+            <Button variant="outline" size="sm" onClick={() => window.open('https://wa.me/918142149666?text=' + encodeURIComponent('Hello! I would like to get a quote.'))}>
               Get a Quote
             </Button>
-            <Button size="sm" onClick={() => navigate('/enroll')}>
+            <Button size="sm" onClick={() => window.open('https://wa.me/918142149666?text=' + encodeURIComponent('Hello! I want to enroll in a training/workshop.'))}>
               Enroll Now
             </Button>
           </div>
@@ -212,10 +211,10 @@ export const Header = () => {
                     {isDark ? <Sun size={20} /> : <Moon size={20} />}
                     <span>{isDark ? 'Light Mode' : 'Dark Mode'}</span>
                   </button>
-                  <Button variant="outline" size="sm" onClick={() => navigate('/get-a-quote')}>
+                  <Button variant="outline" size="sm" onClick={() => window.open('https://wa.me/918142149666?text=' + encodeURIComponent('Hello! I would like to get a quote.'))}>
                     Get a Quote
                   </Button>
-                  <Button size="sm" onClick={() => navigate('/enroll')}>
+                  <Button size="sm" onClick={() => window.open('https://wa.me/918142149666?text=' + encodeURIComponent('Hello! I want to enroll in a training/workshop.'))}>
                     Enroll Now
                   </Button>
                 </div>

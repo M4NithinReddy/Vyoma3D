@@ -39,7 +39,7 @@ export const ServicesCAE = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg" onClick={() => window.location.href = '/get-a-quote'}>
+            <Button size="lg" onClick={() => window.open('https://wa.me/918142149666?text=' + encodeURIComponent('Hello! I want to discuss a CAE project.'))}>
               Discuss Your Project
             </Button>
           </div>

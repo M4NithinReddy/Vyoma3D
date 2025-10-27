@@ -101,7 +101,7 @@ export const Services3DPrinting = () => {
             </div>
 
             <div className="mt-12 text-center">
-              <Button size="lg" onClick={() => window.location.href = '/get-a-quote'}>
+              <Button size="lg" onClick={() => window.open('https://wa.me/918142149666?text=' + encodeURIComponent('Hello! I want a 3D printing quote. I will share files on WhatsApp.'))}>
                 Upload Files for Quote
               </Button>
             </div>

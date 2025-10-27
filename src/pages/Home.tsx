@@ -144,16 +144,35 @@ const blogPosts = [
 
 const galleryItems = [
   {
-    url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760871345/IMG_8660_vhzzpl.jpg',
-    caption: 'High-Precision 3D Printed Prototype',
-    category: 'Printing'
+    url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495992/WhatsApp_Image_2025-10-24_at_3.08.03_PM_kcjcyj.jpg',
+    caption: 'Workshop at Kaveri University',
+    category: 'Kaveri University'
   },
- {
-    url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760871342/da9b8445-d678-4f78-8538-90c09cc61158_gvsgsr.jpg',
-    caption: '3D Printing Workshop',
-    category: 'Workshop',
-  },  { url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760872632/IMG_9344_y2gpmf.jpg', caption: 'Faculty development program', category: 'Faculty development' },
-  { url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760872636/IMG_8647_sospm7.jpg', caption: 'Physical Prototype', category: 'Prototype' }
+  {
+    url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495988/WhatsApp_Image_2025-10-24_at_3.08.01_PM_oohg8r.jpg',
+    caption: 'With Hon’ble Governor Shri Jishnu Dev Varma, Shri G.V. Bhaskar Rao, and Dr. V. Praveen Rao',
+    category: 'Kaveri University'
+  },
+  {
+    url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495988/WhatsApp_Image_2025-10-24_at_3.07.59_PM_dg1uxc.jpg',
+    caption: 'Kaveri University – Event moments',
+    category: 'Kaveri University'
+  },
+  {
+    url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495983/WhatsApp_Image_2025-10-24_at_3.08.31_PM_hrdwfl.jpg',
+    caption: 'Vyoma3D Team – Kaveri University',
+    category: 'Kaveri University'
+  },
+  {
+    url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495982/WhatsApp_Image_2025-10-24_at_3.07.53_PM_a9m65p.jpg',
+    caption: 'Explaining 3D printing to Hon’ble Governor Shri Jishnu Dev Varma – Kaveri University',
+    category: 'Kaveri University'
+  },
+  {
+    url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495983/WhatsApp_Image_2025-10-24_at_3.08.31_PM_hrdwfl.jpg',
+    caption: 'Vyoma3D Team – Kaveri University',
+    category: 'Kaveri University'
+  }
 ];
 
 export const Home = () => {
@@ -267,7 +286,7 @@ export const Home = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-start mb-4">
-                <Button size="lg" onClick={() => window.location.href = '/get-a-quote'}>
+                <Button size="lg" onClick={() => window.open('https://wa.me/918142149666?text=' + encodeURIComponent('Hello! I would like to get a quote.'))}>
                   Get a Quote
                   <ArrowRight size={20} />
                 </Button>

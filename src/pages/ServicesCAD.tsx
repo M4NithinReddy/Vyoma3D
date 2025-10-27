@@ -72,7 +72,7 @@ export const ServicesCAD = () => {
 
           <AnimatedSection>
             <div className="text-center">
-              <Button size="lg" onClick={() => window.location.href = '/get-a-quote'}>
+              <Button size="lg" onClick={() => window.open('https://wa.me/918142149666?text=' + encodeURIComponent('Hello! I need a CAD services quote.'))}>
                 Request a Quote
               </Button>
             </div>

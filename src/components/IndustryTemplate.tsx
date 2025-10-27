@@ -67,7 +67,7 @@ export const IndustryTemplate = ({ industry, icon, description, challenges, case
           </div>
 
           <div className="text-center">
-            <Button size="lg" onClick={() => window.location.href = '/contact'}>
+            <Button size="lg" onClick={() => window.open('https://wa.me/918142149666?text=' + encodeURIComponent('Hello! I want to talk to an expert about ' + industry + ' solutions.'))}>
               Talk to an Expert
             </Button>
           </div>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+// state no longer needed after removing modal
 import { Calendar, Clock, MapPin } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
@@ -26,25 +26,7 @@ const sliderImages = [
 ];
 
 export const Workshops = () => {
-  const [showRegister, setShowRegister] = useState(false);
-  const [selectedWorkshop, setSelectedWorkshop] = useState<string | null>(null);
-
-  const openRegister = (title: string) => {
-    setSelectedWorkshop(title);
-    setShowRegister(true);
-  };
-
-  const closeRegister = () => {
-    setShowRegister(false);
-    setSelectedWorkshop(null);
-  };
-
-  const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    alert(`Registration submitted\nName: ${data.get('name')}\nEmail: ${data.get('email')}\nPhone: ${data.get('phone')}\nWorkshop: ${data.get('workshop')}\nNotes: ${data.get('notes')}`);
-    closeRegister();
-  };
+  const wa = (text: string) => window.open(`https://wa.me/918142149666?text=${encodeURIComponent(text)}`, '_blank');
 
   return (
     <>
@@ -100,7 +82,7 @@ export const Workshops = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full mt-auto" onClick={() => openRegister(ws.title)}>Register Now</Button>
+                  <Button className="w-full mt-auto" onClick={() => wa(`Hello! I want to register for: ${ws.title}`)}>Register Now</Button>
                 </Card>
               </motion.div>
             ))}
@@ -110,52 +92,12 @@ export const Workshops = () => {
             <Card className="max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold text-white mb-4">Need a Custom Workshop?</h3>
               <p className="text-gray-400 mb-6">We can design tailored workshops for your team's specific needs.</p>
-              <Button variant="outline">Request Custom Workshop</Button>
+              <Button variant="outline" onClick={() => wa('Hello! I want to request a custom workshop for my team.')}>Request Custom Workshop</Button>
             </Card>
           </div>
         </div>
       </div>
-      {showRegister && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-          <div className="absolute inset-0 bg-black/70" onClick={closeRegister} />
-          <div className="relative z-10 w-full max-w-lg mx-auto">
-            <Card className="p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-white">Workshop Registration</h3>
-                <button onClick={closeRegister} className="text-gray-400 hover:text-white">✕</button>
-              </div>
-              <form onSubmit={onSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-sm text-gray-400 mb-1">Full Name</label>
-                  <input name="name" required className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-violet-500" placeholder="Your name" />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm text-gray-400 mb-1">Email</label>
-                    <input type="email" name="email" required className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-violet-500" placeholder="you@example.com" />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-gray-400 mb-1">Phone</label>
-                    <input type="tel" name="phone" className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-violet-500" placeholder="+91 98765 43210" />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm text-gray-400 mb-1">Workshop</label>
-                  <input name="workshop" readOnly value={selectedWorkshop || ''} className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white" />
-                </div>
-                <div>
-                  <label className="block text-sm text-gray-400 mb-1">Notes</label>
-                  <textarea name="notes" rows={3} className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-violet-500" placeholder="Any specific questions or requirements" />
-                </div>
-                <div className="flex justify-end gap-3 pt-2">
-                  <Button variant="outline" type="button" onClick={closeRegister}>Cancel</Button>
-                  <Button type="submit">Submit Registration</Button>
-                </div>
-              </form>
-            </Card>
-          </div>
-        </div>
-      )}
+      {/* Modal removed; direct WhatsApp flow used */}
     </>
   );
 };

@@ -96,8 +96,8 @@ export const ProductDetail = () => {
                 </div>
 
                 <div className="mt-6 flex gap-3">
-                  <Button size="sm" onClick={() => window.location.href = '/get-a-quote'}>Request Quote</Button>
-                  <Button size="sm" variant="outline" onClick={() => window.location.href = '/contact'}>Contact Sales</Button>
+                  <Button size="sm" onClick={() => window.open(`https://wa.me/918142149666?text=${encodeURIComponent('Hello! I would like a quote for ' + product.name)}`, '_blank')}>Request Quote</Button>
+                  <Button size="sm" variant="outline" onClick={() => window.open(`https://wa.me/918142149666?text=${encodeURIComponent('Hello! I want to talk to sales about ' + product.name)}`, '_blank')}>Contact Sales</Button>
                 </div>
               </div>
             </div>
