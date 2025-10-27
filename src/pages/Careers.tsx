@@ -25,6 +25,13 @@ const openings = [
     type: 'Full-time',
     summary: 'Set up AM builds (SLA/FDM/DLP), optimize parameters, and oversee post-processing & QA.',
     perks: ['Hands-on lab', 'Career growth', 'Health benefits']
+  },
+  {
+    title: 'Engineering Intern',
+    location: 'Hyderabad, IN',
+    type: 'Internship',
+    summary: 'Assist in CAD/CAE projects, documentation, and lab activities while learning real-world workflows.',
+    perks: ['Mentorship', 'Certificate', 'Flexible schedule']
   }
 ];
 
@@ -57,7 +64,7 @@ export const Careers = () => {
                   <ul className="text-sm text-gray-300 space-y-1 mb-4">
                     {job.perks.map(p => (<li key={p}>• {p}</li>))}
                   </ul>
-                  <Button variant="outline" onClick={() => window.location.href = `mailto:careers@vyoma3d.com?subject=Application: ${encodeURIComponent(job.title)}`}>Apply via Email</Button>
+                  <Button variant="outline" onClick={() => window.location.href = `mailto:info@vyoma3d.com?subject=Application: ${encodeURIComponent(job.title)}`}>Apply via Email</Button>
                 </Card>
               </motion.div>
             ))}
@@ -67,7 +74,7 @@ export const Careers = () => {
             <Card>
               <h3 className="text-2xl font-bold text-white mb-3">Didn’t find a match?</h3>
               <p className="text-gray-400 mb-4">We’re always excited to meet passionate people. Share your profile and tell us how you want to contribute.</p>
-              <Button onClick={() => window.location.href = 'mailto:careers@vyoma3d.com?subject=General%20Application'}>Send Resume</Button>
+              <Button onClick={() => window.location.href = 'mailto:info@vyoma3d.com?subject=General%20Application'}>Send Resume</Button>
             </Card>
           </div>
         </div>

@@ -70,7 +70,7 @@ export const Training = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg" onClick={() => window.location.href = '/get-a-quote'}>
+            <Button size="lg" onClick={() => window.location.href = '/enroll'}>
               Enroll Now
             </Button>
           </div>
