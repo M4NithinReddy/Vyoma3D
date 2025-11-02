@@ -48,8 +48,8 @@ export const ProductDetail = () => {
 
           <Card className="overflow-hidden p-0">
             <div className="grid md:grid-cols-2 gap-0">
-              <div className="relative">
-                <img src={product.image} alt={product.name} className="w-full h-[420px] md:h-[560px] object-cover" />
+              <div className="relative bg-black/40 flex items-center justify-center">
+                <img src={product.image} alt={product.name} className="w-full h-[420px] md:h-[560px] object-contain p-3" />
               </div>
               <div className="p-10 md:p-14">
                 <div className="flex items-center gap-3 mb-3">
@@ -108,8 +108,8 @@ export const ProductDetail = () => {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {product.gallery.map((src, i) => (
                     <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                      <div className="overflow-hidden rounded-xl border border-white/10 bg-black/20">
-                        <img src={src} alt={`${product.name} ${i + 1}`} className="w-full h-56 object-cover" />
+                      <div className="overflow-hidden rounded-xl border border-white/10 bg-black/30 flex items-center justify-center">
+                        <img src={src} alt={`${product.name} ${i + 1}`} className="max-w-full max-h-56 object-contain p-2" />
                       </div>
                     </motion.div>
                   ))}
@@ -168,8 +168,8 @@ export const ProductDetail = () => {
                 <div className="grid md:grid-cols-3 gap-4">
                   {related.map(r => (
                     <Link key={r.slug} to={`/products/${r.slug}`} className="block rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
-                      <div className="overflow-hidden rounded-t-xl">
-                        <img src={r.image} alt={r.name} className="w-full h-40 object-cover" />
+                      <div className="overflow-hidden rounded-t-xl bg-black/30 flex items-center justify-center">
+                        <img src={r.image} alt={r.name} className="max-w-full max-h-40 object-contain p-2" />
                       </div>
                       <div className="p-4">
                         <div className="text-white font-semibold text-sm mb-1">{r.name}</div>

@@ -58,7 +58,7 @@ export const Products = () => {
             initial="initial"
             animate="animate"
             variants={staggerContainer}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
           >
             <AnimatePresence mode="popLayout">
               {filtered.map((product) => (
@@ -71,43 +71,26 @@ export const Products = () => {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Card className="h-full flex flex-col overflow-hidden group">
-                    <div className="relative h-48 overflow-hidden rounded-t-xl -m-6 mb-0">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
-                      <div className="absolute top-4 right-4 w-12 h-12 rounded-xl bg-gray-900/80 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                        <product.iconComp className="text-violet-400" size={24} />
+                  <Card className="h-full flex flex-col overflow-hidden group p-4">
+                    <div className="relative -m-4 mb-0 rounded-t-xl bg-black/40">
+                      <div className="w-full aspect-[4/3] flex items-center justify-center">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="max-h-full max-w-full object-contain p-2"
+                        />
+                      </div>
+                      <div className="absolute top-3 right-3 w-9 h-9 rounded-xl bg-gray-900/80 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                        <product.iconComp className="text-violet-400" size={20} />
                       </div>
                     </div>
 
-                    <div className="flex flex-col flex-grow pt-6">
-                      <h3 className="text-xl font-bold text-white mb-1">{product.name}</h3>
-                      <p className="text-sm text-violet-400 mb-3">{product.type}</p>
-                      <p className="text-sm text-gray-400 mb-4 leading-relaxed">{product.description}</p>
+                    <div className="flex flex-col flex-grow pt-3">
+                      <h3 className="text-base font-bold text-white mb-1 line-clamp-1">{product.name}</h3>
+                      <p className="text-xs text-violet-400 mb-2 line-clamp-1">{product.type}</p>
 
-                      {product.buildVolume && <p className="text-sm text-gray-300 mb-1"><span className="text-gray-500 font-medium">Build Volume:</span> {product.buildVolume}</p>}
-                      {product.resolution && <p className="text-sm text-gray-300 mb-1"><span className="text-gray-500 font-medium">Resolution:</span> {product.resolution}</p>}
-                      {product.properties && <p className="text-sm text-gray-300 mb-1"><span className="text-gray-500 font-medium">Properties:</span> {product.properties}</p>}
-                      {product.applications && <p className="text-sm text-gray-300 mb-4"><span className="text-gray-500 font-medium">Applications:</span> {product.applications}</p>}
-
-                      <div className="mt-4 mb-4">
-                        <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Key Features</p>
-                        <ul className="space-y-2">
-                          {product.features.map(f => (
-                            <li key={f} className="text-sm text-gray-400 flex items-start gap-2">
-                              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 mt-1.5 flex-shrink-0" />
-                              <span>{f}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/10">
-                        <span className="text-xl font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">{product.price}</span>
+                      <div className="flex items-center justify-between mt-auto pt-3 border-t border-white/10">
+                        <span className="text-base font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">{product.price}</span>
                         <Button size="sm" variant="outline" onClick={() => navigate(`/products/${product.slug}`)}>Learn More</Button>
                       </div>
                     </div>

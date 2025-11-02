@@ -13,7 +13,7 @@ const processes = [
     title: 'DLP - Digital Light Processing',
     description: 'Fast batch production with high detail and smooth finish',
     resolution: '35-75 microns',
-    materials: ['Engineering Resin', 'Biocompatible', 'High-Temperature'],
+    materials: ['PLA', 'CF-PETG', 'CF-PLA', 'PC-ABS', 'PETG', 'ABS', 'TPU'],
     useCases: ['Dental Applications', 'High-Detail Miniatures', 'Precision Models']
   }
 ];
