@@ -46,16 +46,16 @@ const team = [
     image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495983/WhatsApp_Image_2025-10-26_at_8.33.01_PM_ihszch.jpg'
   },
   {
-    name: 'B. Barath Kumar',
-    role: 'Robotics Engineer, Vyoma3D',
-    bio: 'B. Barath Kumar is a Robotics Engineer at Vyoma3D, specializing in robotic automation and additive manufacturing integration. He focuses on developing intelligent robotic systems, custom machine designs, and process automation to advance smart manufacturing at Vyoma3D.',
+    name: 'B. Barath',
+    role: 'Robotics Engineer – Vyoma3D | M.Tech, IIT Bhubaneswar',
+    bio: 'B. Barath, M.Tech graduate from IIT Bhubaneswar, is a Robotics Engineer at Vyoma3D, specializing in design, development, and implementation of robotic systems. He contributes to innovative automation solutions, advanced robotics projects, and cutting-edge manufacturing technologies, enhancing Vyoma3D’s capabilities in additive manufacturing and automation.',
     image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495982/WhatsApp_Image_2025-10-26_at_8.59.46_PM_e6tbhr.jpg'
   },
   {
     name: 'Sireesha A',
     role: 'HR and Digital Marketing Expert',
     bio: 'Sireesha is an accomplished HR and digital marketing expert, known for driving impactful talent strategies and online branding initiatives in fast-paced business environments. With comprehensive experience in recruitment, employee engagement, and digital campaign management, she excels at building high-performance teams while enhancing organizational visibility through innovative marketing solutions. As a leadership team member, Sireesha combines her people-centric HR approach with data-driven digital marketing expertise to foster a collaborative culture and propel company growth.',
-    image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495982/WhatsApp_Image_2025-10-26_at_9.01.52_PM_k4tldr.jpg'
+    image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1762097203/WhatsApp_Image_2025-10-26_at_9.01.52_PM_k4tldr.jpg'
   },
   {
     name: 'D. Shanthosh',
@@ -116,14 +116,14 @@ export const About = () => {
           </div>
 
           <SectionHeader title="Leadership Team" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-24 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mb-24 max-w-7xl mx-auto items-stretch justify-items-center">
             {team.map((member, i) => (
-              <motion.div key={member.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <button onClick={() => setActiveMember(member)} className="text-left">
-                  <Card className="text-center w-full h-64 flex flex-col justify-start hover:shadow-violet-500/20 cursor-pointer">
-                    <img src={member.image} alt={member.name} className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
-                    <h3 className="font-bold text-white mb-1">{member.name}</h3>
-                    <p className="text-violet-400 text-sm">{member.role}</p>
+              <motion.div key={member.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full w-full flex">
+                <button onClick={() => setActiveMember(member)} className="text-left w-full">
+                  <Card className="text-center w-80 sm:w-full max-w-md mx-auto h-full min-h-72 sm:min-h-80 flex flex-col items-center justify-start hover:shadow-violet-500/20 cursor-pointer p-4 sm:p-6 md:p-8">
+                    <img src={member.image} alt={member.name} className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 sm:mb-4 object-cover" />
+                    <h3 className="font-bold text-white mb-1 leading-tight text-center text-base sm:text-lg md:text-xl">{member.name}</h3>
+                    <p className="text-violet-400 leading-snug text-center text-xs sm:text-sm md:text-sm">{member.role}</p>
                   </Card>
                 </button>
               </motion.div>
