@@ -13,8 +13,17 @@ const processes = [
     title: 'DLP - Digital Light Processing',
     description: 'Fast batch production with high detail and smooth finish',
     resolution: '35-75 microns',
-    materials: ['PLA', 'CF-PETG', 'CF-PLA', 'PC-ABS', 'PETG', 'ABS', 'TPU'],
+    materials: ['PLA Based Resin', 'ABS Like Resin', 'Translucent Resin'],
     useCases: ['Dental Applications', 'High-Detail Miniatures', 'Precision Models']
+  },
+  {
+    id: 'fdm',
+    icon: Printer,
+    title: 'FDM - Fused Deposition Modeling',
+    description: 'Strong, durable parts with a wide range of engineering-grade materials',
+    resolution: '100-300 microns',
+    materials: ['PLA', 'ABS', 'PETG', 'TPU', 'Nylon', 'PC (Polycarbonate)', 'ASA', 'Carbon Fiber'],
+    useCases: ['Functional Prototypes', 'End-Use Parts', 'Mechanical Components', 'Large-Scale Models']
   }
 ];
 
@@ -24,7 +33,7 @@ export const Services3DPrinting = () => {
 
   return (
     <>
-      <SEO title="3D Printing Services - DLP" description="DLP high-detail batch production and comprehensive post-processing." />
+      <SEO title="3D Printing Services - DLP & FDM" description="Professional DLP and FDM 3D printing services with high-quality materials and comprehensive post-processing." />
 
       <div className="section-padding">
         <div className="container mx-auto container-padding">

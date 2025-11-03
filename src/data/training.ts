@@ -34,10 +34,7 @@ export const trainingCourses: TrainingCourse[] = [
       '1:1 personalized mentoring with robotics engineers',
       'Bonic.ai platform access for coding and simulation',
       'Scratch and Python programming for robotics',
-      'Object/facial recognition, gesture control, navigation',
-      'Curriculum integration add-on for institutes',
-      'Industry-relevant outcomes: AI, IoT, ROS fundamentals',
-      '300 AI Credits worth ₹5000 included'
+     
     ],
     priceInr: 0,
     syllabus: [
