@@ -1,7 +1,7 @@
 export type Product = {
   slug: string;
-  category: 'printers' | 'materials' | 'accessories';
-  icon: 'Printer' | 'Droplets' | 'Wrench';
+  category: 'materials' | 'robots';
+  icon: 'Bot' | 'Droplets';
   name: string;
   type: string;
   image: string;
@@ -19,8 +19,8 @@ export type Product = {
 export const products: Product[] = [
   {
     slug: 'bonicbot-s1',
-    category: 'accessories',
-    icon: 'Wrench',
+    category: 'robots',
+    icon: 'Bot',
     name: 'BonicBot S1',
     type: 'AI-Powered Humanoid Robot (Education & Research)',
     price: 'Request Quote',
@@ -52,8 +52,8 @@ export const products: Product[] = [
   },
   {
     slug: 'bonicbot-a1',
-    category: 'accessories',
-    icon: 'Wrench',
+    category: 'robots',
+    icon: 'Bot',
     name: 'BonicBot A1',
     type: 'Advanced AI Humanoid Robot (Research & Industrial Simulation)',
     price: 'Request Quote',

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Printer, Droplets, Wrench } from 'lucide-react';
+import { Bot, Droplets, Wrench } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
 import { Card } from '../components/Card';
@@ -9,7 +9,7 @@ import { staggerContainer, staggerItem } from '../lib/animations';
 import { products as allProducts } from '../data/products';
 import { useNavigate } from 'react-router-dom';
 
-const IconMap = { Printer, Droplets, Wrench } as const;
+const IconMap = { Bot, Droplets, Wrench } as const;
 const products = allProducts.map(p => ({
   ...p,
   iconComp: IconMap[p.icon]
@@ -17,9 +17,8 @@ const products = allProducts.map(p => ({
 
 const filterOptions = [
   { id: 'all', label: 'All Products', icon: null },
-  { id: 'printers', label: 'Printers', icon: Printer },
   { id: 'materials', label: 'Materials', icon: Droplets },
-  { id: 'accessories', label: 'Accessories', icon: Wrench }
+  { id: 'robots', label: 'Robots', icon: Bot }
 ];
 
 export const Products = () => {
@@ -29,7 +28,7 @@ export const Products = () => {
 
   return (
     <>
-      <SEO title="3D Printers & Materials" description="Premium 3D printers, resins, filaments, and accessories for professional applications." />
+      <SEO title="Robots & Materials" description="Advanced robotics solutions and materials for professional applications." />
 
       <div className="section-padding pt-32">
         <div className="container mx-auto container-padding">
