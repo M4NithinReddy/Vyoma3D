@@ -20,10 +20,10 @@ export const siteConfig = {
   },
 
   social: {
-    linkedin: "https://linkedin.com/company/vyoma3d",
-    twitter: "https://twitter.com/vyoma3d",
-    youtube: "https://youtube.com/@vyoma3d",
-    instagram: "https://instagram.com/vyoma3d"
+    linkedin: "https://www.linkedin.com/company/vyoma-3d/",
+    twitter: "https://x.com/vyoma3d",
+    facebook: "https://www.facebook.com/profile.php?id=61583470070870",
+    instagram: "https://www.instagram.com/vyoma3d/"
   },
 
   nav: {

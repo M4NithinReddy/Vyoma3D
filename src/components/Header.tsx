@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '../config/site.config';
-import { useDarkMode } from '../hooks/useDarkMode';
 import { Button } from './Button';
 import { FloatingTools } from './FloatingTools';
 
@@ -12,7 +11,6 @@ export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
-  const { isDark, toggle } = useDarkMode();
   const location = useLocation();
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -121,13 +119,6 @@ export const Header = () => {
           </div>
 
           <div className="hidden lg:flex items-center gap-4">
-            <button
-              onClick={toggle}
-              className="p-2 text-gray-400 hover:text-white transition-colors"
-              aria-label="Toggle theme"
-            >
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
             <Button variant="outline" size="sm" onClick={() => window.open('https://wa.me/918142149666?text=' + encodeURIComponent('Hello! I would like to get a quote.'))}>
               Get a Quote
             </Button>
@@ -204,13 +195,6 @@ export const Header = () => {
                   </div>
                 ))}
                 <div className="flex flex-col gap-3 mt-6 pt-4 border-t border-white/10">
-                  <button
-                    onClick={toggle}
-                    className="flex items-center gap-2 p-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-                  >
-                    {isDark ? <Sun size={20} /> : <Moon size={20} />}
-                    <span>{isDark ? 'Light Mode' : 'Dark Mode'}</span>
-                  </button>
                   <Button variant="outline" size="sm" onClick={() => window.open('https://wa.me/918142149666?text=' + encodeURIComponent('Hello! I would like to get a quote.'))}>
                     Get a Quote
                   </Button>

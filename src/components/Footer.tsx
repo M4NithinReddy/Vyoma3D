@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Youtube, Instagram, Mail } from 'lucide-react';
+import { Linkedin, X, Facebook, Instagram, Mail } from 'lucide-react';
 import { siteConfig } from '../config/site.config';
 import { Button } from './Button';
 
@@ -26,10 +26,10 @@ export const Footer = () => {
                 <Linkedin size={20} className="text-gray-400" />
               </a>
               <a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
-                <Twitter size={20} className="text-gray-400" />
+                <X size={20} className="text-gray-400" />
               </a>
-              <a href={siteConfig.social.youtube} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
-                <Youtube size={20} className="text-gray-400" />
+              <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
+                <Facebook size={20} className="text-gray-400" />
               </a>
               <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
                 <Instagram size={20} className="text-gray-400" />
