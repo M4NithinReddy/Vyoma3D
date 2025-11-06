@@ -87,28 +87,36 @@ const process = [
 
 const testimonials = [
   {
-    quote: 'VYOMA3D reduced our prototype lead time by 70% and their CAE insights prevented costly design flaws that would have surfaced in physical testing. The team\'s expertise in topology optimization saved us significant material costs.',
-    author: 'Sarah Chen',
-    role: 'Chief Engineer',
-    company: 'AeroTech Industries',
+    quote: "Our collaboration with Vyoma3D has greatly enhanced our students' practical learning experience. Their expertise in 3D printing and prototyping has helped transform ideas into real-world models with speed and precision. We value their continued support in fostering innovation and skill development at Kaveri University.",
+    author: 'Dr. K. Srinivas',
+    role: 'Dean Faculty, Agricultural Engineering and Technology',
+    company: 'Kaveri University',
     rating: 5,
-    image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100'
+    image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1762410883/WhatsApp_Image_2025-11-05_at_11.26.09_AM_1_q3r7ul.jpg'
   },
   {
-    quote: 'The training program transformed our team\'s capabilities completely. We now handle complex ANSYS simulations in-house, saving over $200K annually. The instructors were patient, knowledgeable, and industry-focused.',
-    author: 'Michael Rodriguez',
-    role: 'R&D Director',
-    company: 'AutoMotive Solutions',
+    quote: "Our collaboration with Vyoma3D has enhanced our students' hands-on learning in 3D printing and prototyping. Their expertise and support have been invaluable in fostering innovation at the School of Mechanical Engineering, KIIT University.",
+    author: 'Dr. Swayam Bikash Mishra',
+    role: 'Professor',
+    company: 'KIIT University',
     rating: 5,
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100'
+    image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1762411097/WhatsApp_Image_2025-11-05_at_11.49.26_AM_fiavnd.jpg'
   },
   {
-    quote: 'Exceptional quality and turnaround. The SLA prints exceeded our ±0.05mm tolerance requirements consistently. Their attention to detail and communication throughout the project was outstanding.',
-    author: 'Dr. Emily Watson',
-    role: 'Product Manager',
-    company: 'MedTech Innovations',
+    quote: 'Vyoma3D has been instrumental in upskilling our faculty and students. Their hands-on training and practical approach helped us gain advanced 3D skills, boosting both learning and teaching capabilities.',
+    author: 'Dr. D. Maneiah',
+    role: 'Dean- Student Affairs',
+    company: 'CMR Technical Campus',
     rating: 5,
-    image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=100'
+    image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1762411183/WhatsApp_Image_2025-11-05_at_12.00.17_PM_dr90sr.jpg'
+  },
+  {
+    quote: 'Our research collaboration with Vyoma3D has been outstanding. Their expertise, innovative approach, and technical support have greatly enhanced our projects, enabling faculty and students to explore new frontiers in 3D technology. Working with Vyoma3D has strengthened our research capabilities and fostered a culture of innovation on campus.',
+    author: 'Dr. P S Rama Sreekanth',
+    role: 'Professor HAG',
+    company: 'School of Mechanical Engineering (VIT AP)',
+    rating: 5,
+    image: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1762411361/WhatsApp_Image_2025-11-05_at_12.15.40_PM_lcowhg.jpg'
   }
 ];
 
@@ -566,44 +574,64 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding relative overflow-hidden">
         <div className="container mx-auto container-padding">
           <SectionHeader
             badge="Testimonials"
             title="Trusted by Industry Leaders"
             description="Don't just take our word for it. Here's what our clients say about working with VYOMA3D."
           />
+        </div>
 
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        {/* Glow effect */}
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none"></div>
+
+        <div className="relative py-8">
+          <motion.div 
+            className="flex gap-8 w-max"
+            animate={{
+              x: ['0%', '-50%'],
+              transition: {
+                x: {
+                  repeat: Infinity,
+                  duration: 40,
+                  ease: 'linear'
+                }
+              }
+            }}
           >
-            {testimonials.map((testimonial, i) => (
-              <AnimatedItem key={i}>
-                <Card className="h-full flex flex-col">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <span key={i} className="text-orange-500 text-lg">★</span>
-                    ))}
-                  </div>
-                  <p className="text-gray-300 mb-6 italic leading-relaxed flex-grow">"{testimonial.quote}"</p>
-                  <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/10">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.author}
-                      className="w-12 h-12 rounded-full object-cover border-2 border-violet-500/30"
-                    />
-                    <div>
-                      <div className="font-semibold text-white">{testimonial.author}</div>
-                      <div className="text-sm text-gray-400">{testimonial.role}</div>
-                      <div className="text-xs text-gray-500">{testimonial.company}</div>
+            {[...testimonials, ...testimonials].map((testimonial, i) => (
+              <div key={i} className="w-96 flex-shrink-0">
+                <Card className="h-full flex flex-col relative group">
+                  {/* Glowing border effect */}
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-violet-600/20 to-cyan-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -m-0.5"></div>
+                  
+                  <div className="relative z-10 bg-gray-900/80 backdrop-blur-sm h-full rounded-xl p-6 flex flex-col">
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <span key={i} className="text-orange-500 text-lg">★</span>
+                      ))}
+                    </div>
+                    <p className="text-gray-300 mb-6 italic leading-relaxed flex-grow">"{testimonial.quote}"</p>
+                    <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/10">
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-gradient-to-br from-violet-600 to-cyan-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -m-0.5"></div>
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.author}
+                          className="w-12 h-12 rounded-full object-cover border-2 border-violet-500/30 relative z-10"
+                        />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-white">{testimonial.author}</div>
+                        <div className="text-sm text-gray-400">{testimonial.role}</div>
+                        <div className="text-xs text-gray-500">{testimonial.company}</div>
+                      </div>
                     </div>
                   </div>
                 </Card>
-              </AnimatedItem>
+              </div>
             ))}
           </motion.div>
         </div>
