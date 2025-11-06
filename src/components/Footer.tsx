@@ -18,21 +18,21 @@ export const Footer = () => {
                 className="h-10 w-auto object-contain"
               />
             </div>
-            <p className="text-gray-400 mb-6 max-w-sm">
+            <p className="text-gray-400 mb-4 max-w-sm">
               {siteConfig.tagline}
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-6">
               <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
-                <Linkedin size={20} className="text-gray-400" />
+                <Linkedin size={18} className="text-gray-400" />
               </a>
               <a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
-                <X size={20} className="text-gray-400" />
+                <X size={18} className="text-gray-400" />
               </a>
               <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
-                <Facebook size={20} className="text-gray-400" />
+                <Facebook size={18} className="text-gray-400" />
               </a>
               <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
-                <Instagram size={20} className="text-gray-400" />
+                <Instagram size={18} className="text-gray-400" />
               </a>
             </div>
           </div>
@@ -68,13 +68,15 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">
-            © {currentYear} {siteConfig.name}. All rights reserved.
-          </p>
-          <div className="flex gap-6 text-sm">
-            <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
+        <div className="pt-8 border-t border-white/10">
+          <div className="flex flex-col items-center gap-6">
+            <p className="text-gray-400 text-sm">
+              © {currentYear} {siteConfig.name}. All rights reserved.
+            </p>
+            <div className="flex flex-wrap justify-center gap-6 text-sm">
+              <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
+            </div>
           </div>
         </div>
       </div>
