@@ -172,15 +172,27 @@ const galleryItems = [
     category: 'Kaveri University'
   },
   {
-    url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495982/WhatsApp_Image_2025-10-24_at_3.07.53_PM_a9m65p.jpg',
-    caption: 'Explaining 3D printing to Hon’ble Governor Shri Jishnu Dev Varma – Kaveri University',
-    category: 'Kaveri University'
+    url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760874648/IMG_9352_bvxbgz.jpg',
+    caption: 'BITS Warangal – 3D Printing Workshop',
+    category: 'Workshop'
   },
   {
-    url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1761495983/WhatsApp_Image_2025-10-24_at_3.08.31_PM_hrdwfl.jpg',
-    caption: 'Vyoma3D Team – Kaveri University',
-    category: 'Kaveri University'
-  }
+    url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760874635/IMG_9354_aiiyqo.jpg',
+    caption: 'JNTUH College of Engineering – 3D Printing Workshop',
+    category: 'Workshop'
+  },
+  {
+    url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760872632/IMG_9344_y2gpmf.jpg',
+    caption: 'Geethanjali College – RFDP Program',
+    category: 'Training'
+  },
+  {
+    url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1760871342/da9b8445-d678-4f78-8538-90c09cc61158_gvsgsr.jpg',
+    caption: 'Kaveri University – Workshop',
+    category: 'Workshop'
+  },
+  
+  
 ];
 
 export const Home = () => {
@@ -538,12 +550,12 @@ export const Home = () => {
           >
             {galleryItems.map((item, i) => (
               <AnimatedItem key={i}>
-                <div className="group cursor-pointer relative overflow-hidden rounded-2xl border border-white/10 bg-black/40">
-                  <div className="relative w-full h-72 flex items-center justify-center bg-black/20">
+                <div className="group cursor-pointer relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 h-full flex flex-col">
+                  <div className="relative w-full aspect-square flex items-center justify-center bg-black/20 p-4">
                     <img
                       src={item.url}
                       alt={item.caption}
-                      className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
                   </div>
