@@ -555,7 +555,7 @@ export const Home = () => {
                     <img
                       src={item.url}
                       alt={item.caption}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
                   </div>
