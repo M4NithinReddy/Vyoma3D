@@ -37,14 +37,14 @@ export const LogoTicker = () => {
       >
         {[...logos, ...logos, ...logos].map((item, i) => (
           <div key={i} className="shrink-0">
-            <div className="relative w-56 h-40 flex flex-col items-center justify-center p-3">
+            <div className="relative w-64 h-48 flex flex-col items-center justify-center p-4 hover:bg-gray-800/30 rounded-xl transition-all duration-300">
               <img
                 src={item.src}
                 alt={item.name}
-                className="relative z-10 max-w-full max-h-24 object-contain rounded-xl"
+                className="relative z-10 max-w-full max-h-32 object-contain rounded-xl transition-transform duration-300 hover:scale-105"
                 loading="lazy"
               />
-              <div className="mt-2 text-center text-gray-300 text-xs leading-snug px-1">
+              <div className="mt-3 text-center text-gray-300 text-sm font-medium leading-snug px-2">
                 {item.name}
               </div>
             </div>

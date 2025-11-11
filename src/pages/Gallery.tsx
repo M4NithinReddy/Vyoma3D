@@ -4,12 +4,12 @@ import { SEO } from '../components/SEO';
 import { SectionHeader } from '../components/SectionHeader';
 
 const items = [
-  { type: 'video', url: 'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1762091940/v1_wxkw4h.mp4', caption: 'Gallery video 1' },
-  { type: 'video', url: 'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1762091939/v2_gdor6x.mp4', caption: 'Gallery video 2' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1762091930/i1_d73gr8.jpg', caption: 'Gallery photo 1' },
-  { type: 'video', url: 'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1762091930/v3_yzrcv1.mp4', caption: 'Gallery video 3' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1762091928/i2_v8webn.jpg', caption: 'Gallery photo 2' },
-  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1762091927/i3_mnd0ws.jpg', caption: 'Gallery photo 3' },
+  { type: 'video', url: 'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1762091940/v1_wxkw4h.mp4', caption: 'Hon’ble Governor Shri Jishnu Dev Varma visiting our stall at Kaveri University.' },
+  { type: 'video', url: 'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1762091939/v2_gdor6x.mp4', caption: 'A proud and memorable moment — Hon’ble Governor Shri Jishnu Dev Varma stopped by our stall and appreciated our innovations.' },
+  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1762091930/i1_d73gr8.jpg', caption: 'A moment of pride as Hon’ble Governor of Telangana, Shri Jishnu Dev Varma, visited our exhibition stall at Kaveri University.' },
+  { type: 'video', url: 'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1762091930/v3_yzrcv1.mp4', caption: 'A glimpse of our cutting-edge 3D printing technology — turning digital designs into real-world creations with precision and innovation.' },
+  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1762091928/i2_v8webn.jpg', caption: 'The visit of Hon’ble Governor Shri Jishnu Dev Varma to our stall marks a proud milestone for our team.' },
+  { type: 'photo', url: 'https://res.cloudinary.com/dqnmk3s8t/image/upload/v1762091927/i3_mnd0ws.jpg', caption: 'Showcasing advanced 3D printing technology that transforms digital designs into real-world innovations.' },
   // Kaveri University – New submissions
   { type: 'video', url: 'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1761495991/WhatsApp_Video_2025-10-24_at_3.08.02_PM_vwx7k3.mp4', caption: 'Presenting our prototypes – Kaveri University' },
   { type: 'video', url: 'https://res.cloudinary.com/dqnmk3s8t/video/upload/v1761495993/WhatsApp_Video_2025-10-24_at_3.08.03_PM_ndqp9q.mp4', caption: '3D-printed prototypes showcase – Kaveri University' },
